@@ -1,9 +1,10 @@
-function show(text) {
+(function show(text) {
     document.querySelector("#ingredients").value = text;
-  }
-  function hide() {
+  })();
+
+(function hide() {
     document.querySelector("#ingredients").value = "";
-  }
+})()
 //   let dropdown = document.querySelectorAll(".dropdown")
 //   let dropdownInput = document.querySelector("#ingredients")
 //   dropdown.forEach(drop => {
