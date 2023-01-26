@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithme de Rechercher</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="search-banner">
+        <img src="./assets/images/logo.png" alt="logo du site">
+        <form action="">
+          <label for="search"></label>
+          <input type="text" id="search" placeholder="Rechercher une recette">
+          <span><i class="fa-solid fa-magnifying-glass"></i></span>
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <section class="dropdown-items">
+        <div class="items-bar">
+          <ul>
+            <li>Jus de citron</li>
+            <li>Tomate</li>
+            <li>Coulis de tomate</li>
+            <li>Lait de coco</li>
+            <li>Riz blanc</li>
+          </ul>
+        </div>
+
+        <div class="dropdown-bar">
+          <div class="dropdown">
+            <div class="dropdown-ingredients">
+              <label for="ingredients"></label>
+              <input type="text" id="ingredients" class="input-ingredients" readOnly placeholder="Ingredients">
+              <div class="option">
+                <div onmouseover="show('Lait de coco')" onmouseout="hide()">Lait de coco</div>
+                <div onmouseover="show('Jus de citron')" onmouseout="hide()">Jus de citron</div>
+                <div onmouseover="show('Crème de coco')" onmouseout="hide()">Crème de coco</div>
+                <div onmouseover="show('Sucre')" onmouseout="hide()">Sucre</div>
+                <div onmouseover="show('Glaçons')" onmouseout="hide()">Glaçons</div>
+                <div onmouseover="show('Thon Rouge')" onmouseout="hide()">Thon Rouge</div>
+                <div onmouseover="show('Concombre')" onmouseout="hide()">Concombre</div>
+                <div onmouseover="show('Tomate')" onmouseout="hide()">Tomate</div>
+                <div onmouseover="show('Carotte')" onmouseout="hide()">Carotte</div>
+                <div onmouseover="show('Citron Vert')" onmouseout="hide()">Citron Vert</div>
+                <div onmouseover="show('Poulet')" onmouseout="hide()">Poulet</div>
+                <div onmouseover="show('Coulis de tomate')" onmouseout="hide()">Coulis de tomate</div>
+                <div onmouseover="show('Oignon')" onmouseout="hide()">Oignon</div>
+                <div onmouseover="show('Poivron rouge')" onmouseout="hide()">Poivron rouge</div>
+                <div onmouseover="show('Huile d\'olive')" onmouseout="hide()">Huile d'olive</div>
+                <div onmouseover="show('Riz blanc')" onmouseout="hide()">Riz blanc</div>
+                <div onmouseover="show('Thon en miettes')" onmouseout="hide()">Thon en miettes</div>
+                <div onmouseover="show('Oeuf dur')" onmouseout="hide()">Oeuf dur</div>
+                <div onmouseover="show('Maïs')" onmouseout="hide()">Maïs</div>
+                <div onmouseover="show('Vinaigrette')" onmouseout="hide()">Vinaigrette</div>
+                <div onmouseover="show('Pâte feuilletée')" onmouseout="hide()">Pâte feuilletée</div>
+                <div onmouseover="show('Crème fraîche')" onmouseout="hide()">Crème fraîche</div>
+                <div onmouseover="show('Gruyère râpé')" onmouseout="hide()">Gruyère râpé</div>
+                <div onmouseover="show('Javascript')" onmouseout="hide()">Moutarde de Dijon</div>
+                <div onmouseover="show('Pomme')" onmouseout="hide()">Pomme</div>
+                <div onmouseover="show('Oeuf')" onmouseout="hide()">Oeuf</div>
+                <div onmouseover="show('Sucre en Poudre')" onmouseout="hide()">Sucre en Poudre</div>
+                <div onmouseover="show('Chocolat au lait')" onmouseout="hide()">Chocolat au lait</div>
+                <div onmouseover="show('Crème liquide')" onmouseout="hide()">Crème liquide</div>
+                <div onmouseover="show('Beurre')" onmouseout="hide()">Beurre</div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown-devices">
+              <label for="devices"></label>
+              <input type="text" id="devices" class="input-devices" readOnly placeholder="Appareils">
+              <div class="option">
+                <div onmouseover="show('Html')">Html</div>
+                <div onmouseover="show('CSS')">CSS</div>
+                <div onmouseover="show('Javascript')">Javascript</div>
+                <div onmouseover="show('ReactJs')">ReactJs</div>
+                <div onmouseover="show('Photoshop')">Photoshop</div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown-utensils">
+              <label for="utensils"></label>
+              <input type="text" id="utensils" class="input-utensils" readOnly placeholder="Ustensils">
+              <div class="option">
+                <div onmouseover="show('Html')">Html</div>
+                <div onmouseover="show('CSS')">CSS</div>
+                <div onmouseover="show('Javascript')">Javascript</div>
+                <div onmouseover="show('ReactJs')">ReactJs</div>
+                <div onmouseover="show('Photoshop')">Photoshop</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="list-cards">
+        <div class="cards-container">
+          
+        </div>
+      </section>
+    </main>
+
+  </div>
+  <script src="/scripts/index.js"></script>
+</body>
+
+</html>
