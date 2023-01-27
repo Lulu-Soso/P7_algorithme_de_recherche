@@ -28,12 +28,43 @@
   background-color: #c7bebe;
 }
 
+.card {
+  border-radius: 5px;
+  background: #E7E7E7;
+}
+
+.div-img {
+  border-radius: 5px 5px 0 0;
+}
+
 .card-content {
     display: flex;
     padding: 5px 5px;
-    background: #E7E7E7;
-    height: 187px;
+}
 
+.card-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card-title h2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.card-title .time img {
+  position: absolute;
+  right: 65px;
+}
+
+.card-title .time h2 {
+  font-size: 18px;
+  font-weight: 400;
+  float: right;
+  margin-left: 5px;
+  display: block;
 }
 
 .left-content {
@@ -54,22 +85,10 @@
     flex-direction: column;
 }
 
-.right-content .time {
+.time {
+  display: flex;
     position: relative;
     padding: 5px;
-}
-
-.right-content .time img {
-    position: absolute;
-    right: 65px;
-}
-
-.right-content .time h2 {
-    font-size: 18px;
-    font-weight: 400;
-    float: right;
-    margin-left: 5px;
-    display: block;
 }
 
 .text-content-left {

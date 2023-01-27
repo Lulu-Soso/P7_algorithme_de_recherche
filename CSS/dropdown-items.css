@@ -12,6 +12,7 @@
 .items-bar ul {
   list-style-type: none;
   display: flex;
+  align-items: center;
 }
 
 .items-bar li {
@@ -39,7 +40,7 @@
 
 .items-bar p span {  
     color: white;
-    transform: translateY(-7%);
+    transform: translateY(-14%);
   }
 
 /*********** dropdown-bar ***********/
@@ -85,6 +86,7 @@
   border-radius: 5px;
   width: 170px;
 }
+
 /****************************/
 .dropdown.active .dropdown-ingredients {
   width: 667px;
