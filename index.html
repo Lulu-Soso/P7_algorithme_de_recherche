@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Algorithme de Rechercher</title>
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <title>Les petits plats</title>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -30,11 +32,16 @@
       <section class="dropdown-items">
         <div class="items-bar">
           <ul>
-            <li>Jus de citron</li>
-            <li>Tomate</li>
-            <li>Coulis de tomate</li>
-            <li>Lait de coco</li>
-            <li>Riz blanc</li>
+            <li>Jus de citron <p><span>x</span></p>
+            </li>
+            <li>Tomate <p><span>x</span></p>
+            </li>
+            <li>Coulis de tomate <p><span>x</span></p>
+            </li>
+            <li>Lait de coco <p><span>x</span></p>
+            </li>
+            <li>Riz blanc <p><span>x</span></p>
+            </li>
           </ul>
         </div>
 
@@ -82,11 +89,13 @@
               <label for="devices"></label>
               <input type="text" id="devices" class="input-devices" readOnly placeholder="Appareils">
               <div class="option">
-                <div onmouseover="show('Html')">Html</div>
-                <div onmouseover="show('CSS')">CSS</div>
-                <div onmouseover="show('Javascript')">Javascript</div>
-                <div onmouseover="show('ReactJs')">ReactJs</div>
-                <div onmouseover="show('Photoshop')">Photoshop</div>
+                <div onmouseover="show('Appareil1')" onmouseout="hide()">Appareil1</div>
+                <div onmouseover="show('Appareil2')" onmouseout="hide()">Appareil2</div>
+                <div onmouseover="show('Appareil3')" onmouseout="hide()">Appareil3</div>
+                <div onmouseover="show('Appareil4')" onmouseout="hide()">Appareil4</div>
+                <div onmouseover="show('Appareil5')" onmouseout="hide()">Appareil5</div>
+                <div onmouseover="show('Appareil6')" onmouseout="hide()">Appareil6</div>
+                <div onmouseover="show('Appareil7')" onmouseout="hide()">Appareil7</div>
               </div>
             </div>
           </div>
@@ -95,11 +104,14 @@
               <label for="utensils"></label>
               <input type="text" id="utensils" class="input-utensils" readOnly placeholder="Ustensils">
               <div class="option">
-                <div onmouseover="show('Html')">Html</div>
-                <div onmouseover="show('CSS')">CSS</div>
-                <div onmouseover="show('Javascript')">Javascript</div>
-                <div onmouseover="show('ReactJs')">ReactJs</div>
-                <div onmouseover="show('Photoshop')">Photoshop</div>
+                <div onmouseover="show('Ustensil1')" onmouseout="hide()">Ustensil1</div>
+                <div onmouseover="show('Ustensil2')" onmouseout="hide()">Ustensil2</div>
+                <div onmouseover="show('Ustensil3')" onmouseout="hide()">Ustensil3</div>
+                <div onmouseover="show('Ustensil4')" onmouseout="hide()">Ustensil4</div>
+                <div onmouseover="show('Ustensil5')" onmouseout="hide()">Ustensil5</div>
+                <div onmouseover="show('Ustensil6')" onmouseout="hide()">Ustensil6</div>
+                <div onmouseover="show('Ustensil7')" onmouseout="hide()">Ustensil7</div>
+                <div onmouseover="show('Ustensil8')" onmouseout="hide()">Ustensil8</div>
               </div>
             </div>
           </div>
@@ -118,24 +130,239 @@
           <article><a href="#"><div><h2>cookie</h2></div></a></article>
           <article><a href="#"><div><h2>cookie</h2></div></a></article> -->
           <ul id="result">
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
-            <li><div class="card"><div class="div-img"></div>cookie</div></li>
+            <li>
+              <div class="card">
+                <div class="div-img"></div>
+                <div class="card-content">
+                  <div class="left-content">
+                    <h2>Limonade de Coco</h2>
+                    <div class="text-content-left">
+                      <p>Lait de coco: 400ml</p>
+                      <p>Jus de citron: 2</p>
+                      <p>Crème de coco: 4 cuillères</p>
+                      <p>Sucre: 20g</p>
+                      <p>Glaçons: 2</p>
+                    </div>
+                  </div>
+                  <div class="right-content">
+                    <div class="time">
+                      <img src="/assets/images/hour.png" alt="image de temps de préparation">
+                      <h2>10 mn</h2>
+                    </div>
+                    <div class="text-content-right">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aperiam ipsum illum natus ab ad
+                        ipsa, ut dolorem accusantium minima quam facilis accusamus amet modi vel tenetur nobis eveniet
+                        officiis.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="div-img"></div>
+                <div class="card-content">
+                  <div class="left-content">
+                    <h2>Poisson Cru à la tahitienne</h2>
+                    <div class="text-content-left">
+                      <p>Lait de coco: 400ml</p>
+                      <p>Jus de citron: 2</p>
+                      <p>Crème de coco: 4 cuillères</p>
+                      <p>Sucre: 20g</p>
+                      <p>Glaçons: 2</p>
+                    </div>
+                  </div>
+                  <div class="right-content">
+                    <div class="time">
+                      <img src="/assets/images/hour.png" alt="image de temps de préparation">
+                      <h2>60 mn</h2>
+                    </div>
+                    <div class="text-content-right">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aperiam ipsum illum natus ab ad
+                        ipsa, ut dolorem accusantium minima quam facilis accusamus amet modi vel tenetur nobis eveniet
+                        officiis.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="div-img"></div>
+                <div class="card-content">
+                  <div class="left-content">
+                    <h2>Poulet coco réunionnais</h2>
+                    <div class="text-content-left">
+                      <p>Lait de coco: 400ml</p>
+                      <p>Jus de citron: 2</p>
+                      <p>Crème de coco: 4 cuillères</p>
+                      <p>Sucre: 20g</p>
+                      <p>Glaçons: 2</p>
+                    </div>
+                  </div>
+                  <div class="right-content">
+                    <div class="time">
+                      <img src="/assets/images/hour.png" alt="image de temps de préparation">
+                      <h2>80 mn</h2>
+                    </div>
+                    <div class="text-content-right">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aperiam ipsum illum natus ab ad
+                        ipsa, ut dolorem accusantium minima quam facilis accusamus amet modi vel tenetur nobis eveniet
+                        officiis.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="div-img"></div>
+                <div class="card-content">
+                  <div class="left-content">
+                    <h2>Limonade de Coco</h2>
+                    <div class="text-content-left">
+                      <p>Lait de coco: 400ml</p>
+                      <p>Jus de citron: 2</p>
+                      <p>Crème de coco: 4 cuillères</p>
+                      <p>Sucre: 20g</p>
+                      <p>Glaçons: 2</p>
+                    </div>
+                  </div>
+                  <div class="right-content">
+                    <div class="time">
+                      <img src="/assets/images/hour.png" alt="image de temps de préparation">
+                      <h2>10 mn</h2>
+                    </div>
+                    <div class="text-content-right">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aperiam ipsum illum natus ab ad
+                        ipsa, ut dolorem accusantium minima quam facilis accusamus amet modi vel tenetur nobis eveniet
+                        officiis.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="div-img"></div>
+                <div class="card-content">
+                  <div class="left-content">
+                    <h2>Limonade de Coco</h2>
+                    <div class="text-content-left">
+                      <p>Lait de coco: 400ml</p>
+                      <p>Jus de citron: 2</p>
+                      <p>Crème de coco: 4 cuillères</p>
+                      <p>Sucre: 20g</p>
+                      <p>Glaçons: 2</p>
+                    </div>
+                  </div>
+                  <div class="right-content">
+                    <div class="time">
+                      <img src="/assets/images/hour.png" alt="image de temps de préparation">
+                      <h2>10 mn</h2>
+                    </div>
+                    <div class="text-content-right">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aperiam ipsum illum natus ab ad
+                        ipsa, ut dolorem accusantium minima quam facilis accusamus amet modi vel tenetur nobis eveniet
+                        officiis.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="div-img"></div>
+                <div class="card-content">
+                  <div class="left-content">
+                    <h2>Limonade de Coco</h2>
+                    <div class="text-content-left">
+                      <p>Lait de coco: 400ml</p>
+                      <p>Jus de citron: 2</p>
+                      <p>Crème de coco: 4 cuillères</p>
+                      <p>Sucre: 20g</p>
+                      <p>Glaçons: 2</p>
+                    </div>
+                  </div>
+                  <div class="right-content">
+                    <div class="time">
+                      <img src="/assets/images/hour.png" alt="image de temps de préparation">
+                      <h2>10 mn</h2>
+                    </div>
+                    <div class="text-content-right">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aperiam ipsum illum natus ab ad
+                        ipsa, ut dolorem accusantium minima quam facilis accusamus amet modi vel tenetur nobis eveniet
+                        officiis.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="div-img"></div>
+                <div class="card-content">
+                  <div class="left-content">
+                    <h2>Limonade de Coco</h2>
+                    <div class="text-content-left">
+                      <p>Lait de coco: 400ml</p>
+                      <p>Jus de citron: 2</p>
+                      <p>Crème de coco: 4 cuillères</p>
+                      <p>Sucre: 20g</p>
+                      <p>Glaçons: 2</p>
+                    </div>
+                  </div>
+                  <div class="right-content">
+                    <div class="time">
+                      <img src="/assets/images/hour.png" alt="image de temps de préparation">
+                      <h2>10 mn</h2>
+                    </div>
+                    <div class="text-content-right">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aperiam ipsum illum natus ab ad
+                        ipsa, ut dolorem accusantium minima quam facilis accusamus amet modi vel tenetur nobis eveniet
+                        officiis.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="div-img"></div>
+                <div class="card-content">
+                  <div class="left-content">
+                    <h2>Limonade de Coco</h2>
+                    <div class="text-content-left">
+                      <p>Lait de coco: 400ml</p>
+                      <p>Jus de citron: 2</p>
+                      <p>Crème de coco: 4 cuillères</p>
+                      <p>Sucre: 20g</p>
+                      <p>Glaçons: 2</p>
+                    </div>
+                  </div>
+                  <div class="right-content">
+                    <div class="time">
+                      <img src="/assets/images/hour.png" alt="image de temps de préparation">
+                      <h2>10 mn</h2>
+                    </div>
+                    <div class="text-content-right">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aperiam ipsum illum natus ab ad
+                        ipsa, ut dolorem accusantium minima quam facilis accusamus amet modi vel tenetur nobis eveniet
+                        officiis.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
     </main>
 
   </div>
-  <script src="/scripts/index.js"></script>
+
+  <!-- add attribute type ="module" for imported functions-->
+  <script src="/pages/app.js" type="module"></script>
 </body>
 
 </html>
