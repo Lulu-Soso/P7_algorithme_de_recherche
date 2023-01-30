@@ -1,92 +1,131 @@
 import { changeInputColorForm } from "/scripts/header.js";
-// import { inputForm } from "/scripts/dropdown.js";
+// import { recipeFactory } from "/scripts/factories/recipe-factory.js";
+import { dataApi } from "/scripts/utils/data-api.js";
+import { closeAllDropdowns } from "/scripts/dropdown.js";
 
+const { getRecipes} = dataApi();
 
-(function show(text) {
-    document.querySelector("#ingredients").value = text;
-  })();
+////////// Display all recipes //////////
+async function displayAllRecipes(recipes) {
+  const cardsContainer = document.querySelector(".cards-container");
 
-(function hide() {
-    document.querySelector("#ingredients").value = "";
-})()
+  recipes.length = 15;
 
-
-// let dropdown = document.querySelectorAll(".dropdown")
-// let dropdownInput = document.querySelector("#ingredients")
-// dropdown.forEach(drop => {
-//     drop.addEventListener('click', () => {
-//         drop.classList.toggle('active')
-//         if (drop.classList.contains("active")) {
-//             dropdownInput.removeAttribute("readonly");
-//     } else {
-//         dropdownInput.setAttribute("readonly", true);
-//     }
-// })});
-// dropdownInput.addEventListener("focus", function(){
-//     if (dropdown.classList.contains("active")) {
-//         dropdownInput.readOnly = false;
-//     }
-// });
-// dropdownInput.addEventListener("blur", function(){
-//     dropdownInput.readOnly = true;
-// });
-
-let dropdown = document.querySelectorAll(".dropdown");
-let dropdownInput = document.querySelector("#ingredients");
-let activeDropdown;
-
-function closeAllDropdowns() {
-  dropdown.forEach(drop => {
-    if (drop.classList.contains("active")) {
-      drop.classList.remove("active");
-      dropdownInput.setAttribute("readonly", true);
-    }
-  });
+  cardsContainer.innerHTML = recipes
+    .map(
+      (recipe) =>
+        `
+    <article>
+      <a href="#" aria-label="article de recette">
+        <div class="card">
+          <div class="div-img"></div>
+          <div class="card-title">
+            <h2>${recipe.name}</h2>
+            <div class="time">
+              <img src="/assets/images/hour.png" aria-label="image de temps de préparation" alt="image de temps de préparation">
+              <h2>${recipe.time}</h2>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="left-content">
+              <div class="text-content-left">
+              ${recipe.ingredients
+                .map(
+                  (ingredient) =>
+                    `<p>${ingredient.ingredient}: ${
+                      ingredient.quantity ? ingredient.quantity : ""
+                    } ${ingredient.unit ? ingredient.unit : ""}</p>`
+                )
+                .join("")}
+              </div>
+            </div>
+            <div class="right-content">
+              <div class="text-content-right">
+                <p>${recipe.description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </article>
+      `
+    )
+    .join("");
 }
 
-dropdown.forEach(drop => {
-  drop.addEventListener("click", () => {
-    if (activeDropdown && activeDropdown !== drop) {
-      closeAllDropdowns();
-    }
-    drop.classList.toggle("active");
-    activeDropdown = drop;
-    if (drop.classList.contains("active")) {
-      dropdownInput.removeAttribute("readonly");
-    } else {
-      dropdownInput.setAttribute("readonly", true);
-    }
-  });
-});
+////////// Display all ingredients //////////
+async function displayIngredientsList(recipes) {
+  const ulOptionIngredients = document.querySelector(".option-ingredients")
 
-dropdownInput.addEventListener("focus", function() {
-  if (activeDropdown && activeDropdown.classList.contains("active")) {
-    dropdownInput.readOnly = false;
+  ulOptionIngredients.innerHTML = recipes
+  .map(
+    (recipe) =>
+      `
+      ${recipe.ingredients
+        .map(
+          (ingredient) =>
+            `<li onmouseover="show('Lait de coco')" onmouseout="hide()">${ingredient.ingredient}</li>`
+        )
+        .join("")}
+    `
+  )
+  .join("");
+}
+
+////////// Display all appliances //////////
+async function displayAppliancesList(recipes) {
+  const ulOptionAppliances = document.querySelector(".option-appliances")
+
+  ulOptionAppliances.innerHTML = recipes
+  .map(
+    (recipe) =>
+      `
+        <li onmouseover="show('Lait de coco')" onmouseout="hide()">${recipe.appliance}</li>
+
+    `
+  )
+  .join("");
+}
+
+////////// Display all appliances //////////
+async function displayUtensilsList(recipes) {
+  const ulOptionUtensils = document.querySelector(".option-utensils")
+
+  ulOptionUtensils.innerHTML = recipes
+  .map(
+    (recipe) =>
+      `
+        <li onmouseover="show('Lait de coco')" onmouseout="hide()">${recipe.ustensils}</li>
+    `
+  )
+  .join("");
+}
+
+////////// Display recipes by tag name //////////
+async function displayRecipesBySearch(recipes) {
+  const cardsContainer = document.querySelector(".cards-container");
+  const inputSearch = document.querySelector("input");
+
+  if (recipes.name === null) {
+    console.log(recipes.name);
+    cardsContainer.innerHTML = "<h2>Aucun résultat</h2>";
+  } else {
+    inputSearch.addEventListener("input", (e) => {
+      console.log(e.target.value);
+    });
   }
-});
-
-dropdownInput.addEventListener("blur", function() {
-  dropdownInput.readOnly = true;
-});
-
-document.addEventListener("keydown", function(e) {
-  if (e.keyCode === 13 && activeDropdown && activeDropdown.classList.contains("active")) {
-    closeAllDropdowns();
-  }
-});
-
-
-
-
-
+}
 
 async function init() {
-  changeInputColorForm()
+  changeInputColorForm();
+  closeAllDropdowns();
+  displayRecipesBySearch();
+
+  const recipes = await getRecipes();
+  await displayAllRecipes(recipes);
+  await displayIngredientsList(recipes)
+  await displayAppliancesList(recipes)
+  await displayUtensilsList(recipes)
 }
 
 init().then(() => {});
-
-
-
-
-
