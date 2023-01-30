@@ -54,17 +54,17 @@ async function displayAllRecipes(recipes) {
 }
 
 ////////// Display all ingredients //////////
-async function displayIngredientsList(recipes) {
+async function displayIngredientsList(ingredients) {
   const ulOptionIngredients = document.querySelector(".option-ingredients")
 
-  ulOptionIngredients.innerHTML = recipes
+  ulOptionIngredients.innerHTML = ingredients
   .map(
-    (recipe) =>
+    (ingred) =>
       `
-      ${recipe.ingredients
+      ${ingred.ingredients
         .map(
-          (ingredient) =>
-            `<li onmouseover="show('Lait de coco')" onmouseout="hide()">${ingredient.ingredient}</li>`
+          (ingredientLi) =>
+            `<li>${ingredientLi.ingredient}</li>`
         )
         .join("")}
     `
@@ -73,32 +73,53 @@ async function displayIngredientsList(recipes) {
 }
 
 ////////// Display all appliances //////////
-async function displayAppliancesList(recipes) {
+async function displayAppliancesList(appliances) {
   const ulOptionAppliances = document.querySelector(".option-appliances")
 
-  ulOptionAppliances.innerHTML = recipes
+  ulOptionAppliances.innerHTML = appliances
   .map(
-    (recipe) =>
+    (liAppliance) =>
       `
-        <li onmouseover="show('Lait de coco')" onmouseout="hide()">${recipe.appliance}</li>
-
+        <li>${liAppliance.appliance}</li>
     `
   )
   .join("");
 }
 
 ////////// Display all appliances //////////
-async function displayUtensilsList(recipes) {
+async function displayUtensilsList(utensils) {
   const ulOptionUtensils = document.querySelector(".option-utensils")
 
-  ulOptionUtensils.innerHTML = recipes
+  ulOptionUtensils.innerHTML = utensils
   .map(
-    (recipe) =>
+    (liUtensil) =>
       `
-        <li onmouseover="show('Lait de coco')" onmouseout="hide()">${recipe.ustensils}</li>
+        <li>${liUtensil.ustensils}</li>
     `
   )
   .join("");
+}
+
+////////// Display all appliances //////////
+async function displayItems() {
+  const optionTypes = [
+    { selector: ".option-ingredients", ulId: "#ul-ingredients", background: "#3282f7" },
+    { selector: ".option-appliances", ulId: "#ul-appliances", background: "#68d9a4" },
+    { selector: ".option-utensils", ulId: "#ul-utensils", background: "#ed6454" }
+  ];
+
+  optionTypes.forEach(({ selector, ulId, background }) => {
+    const optionType = document.querySelector(selector);
+    const ulType = document.querySelector(ulId);
+
+    optionType.addEventListener("click", (event) => {
+      if (event.target.tagName === "LI") {
+        const selected = event.target.textContent;
+        const className = background ? `style="background:${background}"` : "";
+        ulType.innerHTML += `<li ${className}>${selected}<p><span>x</span></p></li>`;
+      }
+    });
+  });
 }
 
 ////////// Display recipes by tag name //////////
@@ -120,6 +141,7 @@ async function init() {
   changeInputColorForm();
   closeAllDropdowns();
   displayRecipesBySearch();
+  displayItems()
 
   const recipes = await getRecipes();
   await displayAllRecipes(recipes);
