@@ -116,9 +116,15 @@ async function displayItems() {
       if (event.target.tagName === "LI") {
         const selected = event.target.textContent;
         const className = background ? `style="background:${background}"` : "";
-        ulType.innerHTML += `<li ${className}>${selected}<p><span>x</span></p></li>`;
+        ulType.innerHTML += `<li ${className}>${selected}<p><span aria-label="bouton de suppression">x</span></p></li>`;
       }
     });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target.tagName === "SPAN") {
+      event.target.parentElement.parentElement.remove();
+    }
   });
 }
 
