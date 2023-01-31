@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 10px 0x;
 }
 
 .items-bar li {
@@ -23,11 +23,11 @@
   border-radius: 5px;
   color: white;
   padding: 10px;
-  margin: 5px;
+  margin: 5px 5px 0 0;
   cursor: default;
 }
 
-.items-bar li p {
+.items-bar li button {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -37,9 +37,14 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: transparent;
 }
 
-.items-bar p span {
+.items-bar li:hover {
+  filter: brightness(87%);
+}
+
+.items-bar button span {
   color: white;
   transform: translateY(-14%);
 }
@@ -49,7 +54,7 @@
   width: 100%;
   height: 70px;
   display: flex;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .dropdown {
@@ -77,7 +82,7 @@
   width: 170px;
 }
 
-.dropdown .dropdown-devices {
+.dropdown .dropdown-appliances {
   background-color: #68d9a4;
   height: 100%;
   display: flex;
@@ -101,7 +106,7 @@
   border-radius: 5px 5px 0 0;
 }
 
-.dropdown.active .dropdown-devices {
+.dropdown.active .dropdown-appliances {
   width: 667px;
   border-radius: 5px 5px 0 0;
 }
@@ -165,7 +170,6 @@
   font-weight: 700;
   padding: 20px;
   color: white;
-  /* background-color: #3282f7; */
 }
 
 .dropdown input::placeholder {
@@ -262,18 +266,21 @@
   background-color: #629df5;
   width: 90%;
   margin-left: 10px;
+  cursor: text;
 }
 
-.dropdown.active .dropdown-devices input {
+.dropdown.active .dropdown-appliances input {
   background-color: #a5d1bd;
   width: 90%;
   margin-left: 10px;
+  cursor: text;
 }
 
 .dropdown.active .dropdown-utensils input {
   background-color: #ee867a;
   width: 90%;
   margin-left: 10px;
+  cursor: text;
 }
 
 /*********************************/
@@ -284,8 +291,7 @@
   height: 45px;
 }
 
-.dropdown-devices input {
-  /* width: 75%; */
+.dropdown-appliances input {
   background-color: #68d9a4;
   margin: 0;
   height: 45px;
@@ -306,7 +312,7 @@
   flex: 0 0 33, 333%;
 }
 
-.dropdown-devices .option-appliances {
+.dropdown-appliances .option-appliances {
   background-color: #68d9a4;
   width: 667px;
   display: flex;
@@ -323,16 +329,8 @@
 }
 
 /*******************************/
-.dropdown-ingredients .option-ingredients li {
-  display: flex;
-  flex: 0 0 33.333%;
-}
-
-.dropdown-devices .option-appliances li {
-  display: flex;
-  flex: 0 0 33.333%;
-}
-
+.dropdown-ingredients .option-ingredients li,
+.dropdown-appliances .option-appliances li,
 .dropdown-utensils .option-utensils li {
   display: flex;
   flex: 0 0 33.333%;

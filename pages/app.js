@@ -1,7 +1,8 @@
 import { changeInputColorForm } from "/scripts/header.js";
 // import { recipeFactory } from "/scripts/factories/recipe-factory.js";
 import { dataApi } from "/scripts/utils/data-api.js";
-import { closeAllDropdowns } from "/scripts/dropdown.js";
+import { closeDropdowns } from "/scripts/dropdown.js";
+// import { createDropdownBehavior } from "/scripts/dropdown.js";
 
 const { getRecipes} = dataApi();
 
@@ -100,7 +101,7 @@ async function displayUtensilsList(utensils) {
   .join("");
 }
 
-////////// Display all appliances //////////
+////////// Display selected items dropdown  //////////
 async function displayItems() {
   const optionTypes = [
     { selector: ".option-ingredients", ulId: "#ul-ingredients", background: "#3282f7" },
@@ -116,11 +117,12 @@ async function displayItems() {
       if (event.target.tagName === "LI") {
         const selected = event.target.textContent;
         const className = background ? `style="background:${background}"` : "";
-        ulType.innerHTML += `<li ${className}>${selected}<p><span aria-label="bouton de suppression">x</span></p></li>`;
+        ulType.innerHTML += `<li ${className}>${selected}<button><span aria-label="bouton de suppression">x</span></button></li>`;
       }
     });
   });
 
+  // delete item on span click
   document.addEventListener("click", (event) => {
     if (event.target.tagName === "SPAN") {
       event.target.parentElement.parentElement.remove();
@@ -143,9 +145,11 @@ async function displayRecipesBySearch(recipes) {
   }
 }
 
+
 async function init() {
   changeInputColorForm();
-  closeAllDropdowns();
+  // createDropdownBehavior();
+  await closeDropdowns();
   displayRecipesBySearch();
   displayItems()
 

@@ -19,10 +19,10 @@
   <div class="container">
     <header>
       <div class="search-banner">
-        <img src="./assets/images/logo.png" alt="logo du site">
+        <img src="./assets/images/logo.png" alt="logo du site" aria-label=" logo du site Les petits plats">
         <form action="" class="search-header">
           <label for="search"></label>
-          <input type="text" id="search" placeholder="Rechercher une recette">
+          <input type="text" id="search" autocomplete="off" placeholder="Rechercher une recette">
           <span><i class="fa-solid fa-magnifying-glass"></i></span>
         </form>
       </div>
@@ -34,41 +34,29 @@
           <ul id="ul-ingredients"></ul>
           <ul id="ul-appliances"></ul>
           <ul id="ul-utensils"></ul>
-          <!-- <ul>
-            <li>Jus de citron <p><span>x</span></p>
-            </li>
-            <li>Tomate <p><span>x</span></p>
-            </li>
-            <li>Coulis de tomate <p><span>x</span></p>
-            </li>
-            <li>Lait de coco <p><span>x</span></p>
-            </li>
-            <li>Riz blanc <p><span>x</span></p>
-            </li>
-          </ul> -->
         </div>
 
         <div class="dropdown-bar">
           <div class="dropdown">
-            <div class="dropdown-ingredients">
+            <form id="ingredients-form" class="dropdown-ingredients">
               <label for="ingredients"></label>
-              <input type="text" id="ingredients" class="input-ingredients" readOnly placeholder="Ingredients">
+              <input type="text" id="ingredients" class="input-ingredients" autocomplete="off" readonly placeholder="Ingredients" value="Ingredients" data-placeholder="Ingredients">
               <ul class="option-ingredients"></ul>
-            </div>
+            </form>
           </div>
           <div class="dropdown">
-            <div class="dropdown-devices">
-              <label for="devices"></label>
-              <input type="text" id="devices" class="input-devices" readOnly placeholder="Appareils">
+            <form id="appliances-form" class="dropdown-appliances">
+              <label for="appliances"></label>
+              <input type="text" id="appliances" class="input-appliances" autocomplete="off" readonly placeholder="Appareils" value="Appareils" data-placeholder="Appareils">
               <ul class="option-appliances"></ul>
-            </div>
+            </form>
           </div>
           <div class="dropdown">
-            <div class="dropdown-utensils">
+            <form id="utensils-form" class="dropdown-utensils">
               <label for="utensils"></label>
-              <input type="text" id="utensils" class="input-utensils" readOnly placeholder="Ustensils">
+              <input type="text" id="utensils" class="input-utensils" autocomplete="off" readonly placeholder="Ustensils" value="Ustensils" data-placeholder="Ustensils">
               <ul class="option-utensils"></ul>
-            </div>
+            </form>
           </div>
         </div>
       </section>
