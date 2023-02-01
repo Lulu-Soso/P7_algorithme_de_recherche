@@ -5,12 +5,12 @@ export function dataApi() {
     let response = await fetch(URL);
     let data = await response.json();
     const recipes = [...data];
-    const recipesName = data.name;
+    const recipesName = data.map(item => item.name).flat();
     const ingredientsList = data.map(item => item.ingredients).flat();  // recent version js
     const ingredients = data.map(item => item.ingredients.map(ingredient => `<p>${ingredient.ingredient}: ${ingredient.quantity}${ingredient.unit}</p>`))
     const utensils = [].concat(...data.map(item => item.ustensils)); // old version js
 
-    console.log(recipes);
+    // console.log(recipes);
     // console.log(recipesName);
     // console.log(ingredients);
     // console.log(utensils);
@@ -27,7 +27,7 @@ export function dataApi() {
     return (await fetchData()).recipes;
   };
 
-  const getRecipesName = async () => {
+  const getRecipesByName = async () => {
     return (await fetchData()).recipesName;
   };
 
@@ -48,7 +48,7 @@ export function dataApi() {
     getRecipes,
     getIngredients,
     getIngredientsList,
-    getRecipesName,
+    getRecipesByName,
     getUtensils,
   };
 }

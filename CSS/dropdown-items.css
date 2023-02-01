@@ -197,6 +197,7 @@
   visibility: visible;
   opacity: 1;
   color: white;
+  z-index: 10;
 }
 
 .dropdown .option-ingredients li {
@@ -225,6 +226,7 @@
   visibility: visible;
   opacity: 1;
   color: white;
+  z-index: 10;
 }
 
 .dropdown .option-appliances li {
@@ -252,6 +254,7 @@
   visibility: visible;
   opacity: 1;
   color: white;
+  z-index: 10;
 }
 
 .dropdown .option-utensils li {

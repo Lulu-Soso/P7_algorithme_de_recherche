@@ -1,115 +1,47 @@
 export function recipeFactory(data) {
-  const { name, time, ingredients, description, ingredient, quantity, unit } =
-    data;
+  const { name, time, ingredients, description } = data;
 
   function getRecipeCardDOM() {
-    // const ingredients = getIngredientsDOM()
+    const picture = `/assets/images/recipes-name/${name.replace(/ /g,"-")}.jpg`;
 
-    const article = document.createElement("article");
-
-    const cardRecipe = document.createElement("div");
-    cardRecipe.classList.add("card");
-
-    const divImg = document.createElement("div");
-    divImg.classList.add("div-img");
-
-    const cardTitle = document.createElement("div");
-    cardTitle.classList.add("card-title");
-
-    const h2Title = document.createElement("h2");
-    h2Title.textContent = name;
-
-    const timeRecipe = document.createElement("div");
-    timeRecipe.classList.add("time");
-    const imgTime = document.createElement("img");
-    imgTime.setAttribute("src", "/assets/images/hour.png");
-    imgTime.setAttribute("alt", "image du temps de préparation");
-    imgTime.setAttribute("arial-label", "image du temps de préparation");
-    const h2Time = document.createElement("h2");
-    h2Time.textContent = time;
-
-    const cardContent = document.createElement("div");
-    cardContent.classList.add("card-content");
-
-    const leftContent = document.createElement("div");
-    leftContent.classList.add("left-content");
-    const textContentLeft = document.createElement("div");
-    textContentLeft.classList.add("text-content-left");
-    // textContentLeft.textContent = ingredients;
-
-    const rightContent = document.createElement("div");
-    rightContent.classList.add("right-content");
-    const textContentRight = document.createElement("div");
-    textContentRight.classList.add("text-content-right");
-    textContentRight.textContent = description;
-
-    const { ingredient, quantity, unit } = ingredients;
-
-    const pIngredient = document.createElement("p");
-    pIngredient.textContent = ingredient;
-
-    const pQuantity = document.createElement("p");
-    pQuantity.textContent = quantity;
-
-    const pUnit = document.createElement("p");
-    pUnit.textContent = unit;
-
-    article.appendChild(cardRecipe);
-
-    cardRecipe.appendChild(divImg);
-    cardRecipe.appendChild(cardTitle);
-    cardRecipe.appendChild(cardContent);
-
-    cardTitle.appendChild(h2Title);
-    cardTitle.appendChild(timeRecipe);
-
-    timeRecipe.appendChild(imgTime);
-    timeRecipe.appendChild(h2Time);
-
-    cardContent.appendChild(leftContent);
-    cardContent.appendChild(rightContent);
-
-    leftContent.appendChild(textContentLeft);
-    rightContent.appendChild(textContentRight);
-
-    textContentLeft.appendChild(pIngredient);
-    textContentLeft.appendChild(pQuantity);
-    textContentLeft.appendChild(pUnit);
-    textContentLeft.textContent = ingredients;
-
-    // function getIngredientsDOM() {;
-    // const { ingredient, quantity, unit } = ingredients;
-
-    // const textContentLeft = document.querySelector("text-content-left");
-
-    // const pIngredient = document.createElement("p");
-    // pIngredient.textContent = ingredient;
-
-    // const pQuantity = document.createElement("p");
-    // pQuantity.textContent = quantity;
-
-    // const pUnit = document.createElement("p");
-    // pUnit.textContent = unit;
-
-    // textContentLeft.appendChild(pIngredient);
-    // textContentLeft.appendChild(pQuantity);
-    // textContentLeft.appendChild(pUnit);
-
-    return article;
+    return `
+        <div class="card">
+          <div class="div-img"><img src="${picture}" alt="${name}" aria-label="Nom de la recette ${name}"></div>
+          <div class="card-title">
+            <h2>${name}</h2>
+            <div class="time">
+              <img src="/assets/images/hour.png" aria-label="image de temps de préparation" alt="image de temps de préparation">
+              <h2>${time}</h2>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="left-content">
+              <div class="text-content-left">
+              ${ingredients
+                .map(
+                  (ingredient) =>
+                    `<p>${ingredient.ingredient}: ${
+                      ingredient.quantity ? ingredient.quantity : ""
+                    } ${ingredient.unit ? ingredient.unit : ""}</p>`
+                )
+                .join("")}
+              </div>
+            </div>
+            <div class="right-content">
+              <div class="text-content-right">
+                <p>${description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
   }
-  //   return textContentLeft;
-  // }
 
   return {
     name,
     time,
     ingredients,
     description,
-    ingredient,
-    quantity,
-    unit,
     getRecipeCardDOM
-    // getIngredientsDOM
-    // getUtensils
   };
 }

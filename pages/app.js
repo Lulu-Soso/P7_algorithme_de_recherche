@@ -1,50 +1,20 @@
 import { changeInputColorForm } from "/scripts/header.js";
-// import { recipeFactory } from "/scripts/factories/recipe-factory.js";
+import { recipeFactory } from "/scripts/factories/recipe-factory.js";
 import { dataApi } from "/scripts/utils/data-api.js";
 import { closeDropdowns } from "/scripts/dropdown.js";
 // import { createDropdownBehavior } from "/scripts/dropdown.js";
 
 const { getRecipes} = dataApi();
 
-////////// Display all recipes //////////
-async function displayAllRecipes(recipes) {
+async function displayRecipes(recipes) {
   const cardsContainer = document.querySelector(".cards-container");
-  
-  recipes.length = 15;
-  
-  cardsContainer.innerHTML = recipes.map(
-    (recipe) => {
-      const picture = `/assets/images/recipes-name/${recipe.name.replace(/ /g, '-')}.jpg`;
-      return `
-      <article>
-        <div class="card">
-          <div class="div-img"><img src="${ picture }" alt="${recipe.name}" aria-label="Nom de la recette ${recipe.name}"></div>
-          <div class="card-title">
-            <h2>${recipe.name}</h2>
-            <div class="time">
-              <img src="/assets/images/hour.png" aria-label="image de temps de préparation" alt="image de temps de préparation">
-              <h2>${recipe.time}</h2>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="left-content">
-              <div class="text-content-left">
-              ${recipe.ingredients.map(ingredient => 
-                `<p>${ingredient.ingredient}: ${(ingredient.quantity ? ingredient.quantity : "")} ${(ingredient.unit ? ingredient.unit : "")}</p>`
-              ).join("")}
-              </div>
-            </div>
-            <div class="right-content">
-              <div class="text-content-right">
-                <p>${recipe.description}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-      `;
-    }
-  ).join("");
+
+  recipes.forEach((recipe) => {
+    const recipeModel = recipeFactory(recipe);
+    const recipeCardDOM = document.createElement("article");
+    recipeCardDOM.innerHTML = recipeModel.getRecipeCardDOM();
+    cardsContainer.appendChild(recipeCardDOM);
+  });
 }
 
 ////////// Display all ingredients //////////
@@ -124,20 +94,37 @@ async function displayItems() {
 }
 
 ////////// Display recipes by tag name //////////
-async function displayRecipesBySearch(recipes) {
+
+
+async function displayRecipesBySearch() {
   const cardsContainer = document.querySelector(".cards-container");
-  const inputSearch = document.querySelector("input");
+  const inputSearch = document.querySelector(".search-header > input");
 
-  if (recipes.name === null) {
-    console.log(recipes.name);
-    cardsContainer.innerHTML = "<h2>Aucun résultat</h2>";
-  } else {
-    inputSearch.addEventListener("input", (e) => {
-      console.log(e.target.value);
-    });
-  }
+  const recipes = await getRecipes();
+  // const recipesName = await getRecipesName();
+
+  inputSearch.addEventListener("input", async (e) => {
+    e.preventDefault();
+    const searchValue = e.target.value.toLowerCase();
+
+    const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchValue));
+
+    if (filteredRecipes.length === 0) {
+      cardsContainer.innerHTML = "<h2>Aucun résultat</h2>";
+    } else {
+      let cardsHTML = "";
+      for (const recipe of filteredRecipes) {
+        cardsHTML += `
+          <div class="card">
+            <h3>${recipe.name}</h3>
+            <p>${recipe.description}</p>
+          </div>
+        `;
+      }
+      cardsContainer.innerHTML = cardsHTML;
+    }
+  });
 }
-
 
 async function init() {
   changeInputColorForm();
@@ -146,11 +133,23 @@ async function init() {
   displayRecipesBySearch();
   displayItems()
 
-  const recipes = await getRecipes();
-  await displayAllRecipes(recipes);
-  await displayIngredientsList(recipes)
-  await displayAppliancesList(recipes)
-  await displayUtensilsList(recipes)
+  getRecipes().then(displayRecipes);
+
+  getRecipes().then(displayIngredientsList);
+  getRecipes().then(displayAppliancesList);
+  getRecipes().then(displayUtensilsList);
+
+  // const { getRecipes } = dataApi();
+  // const recipes = await getRecipes();
+  // await displayRecipes(recipes);
+
+  // await getRecipes(recipes);
+  // await displayIngredientsList(recipes)
+  // await displayAppliancesList(recipes)
+  // await displayUtensilsList(recipes)
+
+  // const recipesName = await getRecipesName();
+  // displayRecipesBySearch(recipesName)
 }
 
 init().then(() => {});
