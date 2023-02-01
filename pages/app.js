@@ -10,7 +10,7 @@ const { getRecipes} = dataApi();
 async function displayAllRecipes(recipes) {
   const cardsContainer = document.querySelector(".cards-container");
   
-  // recipes.length = 15;
+  recipes.length = 15;
   
   cardsContainer.innerHTML = recipes.map(
     (recipe) => {
