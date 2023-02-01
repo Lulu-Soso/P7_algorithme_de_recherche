@@ -31,20 +31,31 @@
   border-radius: 5px;
   background: #e7e7e7;
   overflow: hidden;
+  transition: 0.6s;
+}
+
+.card:hover {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05)
 }
 
 .card .div-img {
   height: 178px;
   background-color: #c7bebe;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
 }
 
-/* .card {
-  border-radius: 5px;
-  background: #E7E7E7;
-} */
-
-.div-img {
+.card .div-img img {
   border-radius: 5px 5px 0 0;
+  width: 100%;
+  object-fit: cover;
+  height: 178px;
+  transition: 0.6s;
+}
+
+.card .div-img img:hover {
+  transform: scale(1.1);
 }
 
 .card-content {

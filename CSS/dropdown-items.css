@@ -27,6 +27,10 @@
   cursor: default;
 }
 
+.items-bar li:hover {
+  filter: brightness(87%);
+}
+
 .items-bar li button {
   width: 20px;
   height: 20px;
@@ -40,9 +44,10 @@
   background-color: transparent;
 }
 
-.items-bar li:hover {
-  filter: brightness(87%);
+.items-bar li button:hover {
+  transform: scale(1.3);
 }
+
 
 .items-bar button span {
   color: white;

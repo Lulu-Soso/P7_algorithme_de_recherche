@@ -10,7 +10,7 @@ export function dataApi() {
     const ingredients = data.map(item => item.ingredients.map(ingredient => `<p>${ingredient.ingredient}: ${ingredient.quantity}${ingredient.unit}</p>`))
     const utensils = [].concat(...data.map(item => item.ustensils)); // old version js
 
-    // console.log(recipes);
+    console.log(recipes);
     // console.log(recipesName);
     // console.log(ingredients);
     // console.log(utensils);

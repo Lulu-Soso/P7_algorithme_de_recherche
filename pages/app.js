@@ -9,17 +9,16 @@ const { getRecipes} = dataApi();
 ////////// Display all recipes //////////
 async function displayAllRecipes(recipes) {
   const cardsContainer = document.querySelector(".cards-container");
-
-  recipes.length = 15;
-
-  cardsContainer.innerHTML = recipes
-    .map(
-      (recipe) =>
-        `
-    <article>
-      <a href="#" aria-label="article de recette">
+  
+  // recipes.length = 15;
+  
+  cardsContainer.innerHTML = recipes.map(
+    (recipe) => {
+      const picture = `/assets/images/recipes-name/${recipe.name.replace(/ /g, '-')}.jpg`;
+      return `
+      <article>
         <div class="card">
-          <div class="div-img"></div>
+          <div class="div-img"><img src="${ picture }" alt="${recipe.name}" aria-label="Nom de la recette ${recipe.name}"></div>
           <div class="card-title">
             <h2>${recipe.name}</h2>
             <div class="time">
@@ -30,14 +29,9 @@ async function displayAllRecipes(recipes) {
           <div class="card-content">
             <div class="left-content">
               <div class="text-content-left">
-              ${recipe.ingredients
-                .map(
-                  (ingredient) =>
-                    `<p>${ingredient.ingredient}: ${
-                      ingredient.quantity ? ingredient.quantity : ""
-                    } ${ingredient.unit ? ingredient.unit : ""}</p>`
-                )
-                .join("")}
+              ${recipe.ingredients.map(ingredient => 
+                `<p>${ingredient.ingredient}: ${(ingredient.quantity ? ingredient.quantity : "")} ${(ingredient.unit ? ingredient.unit : "")}</p>`
+              ).join("")}
               </div>
             </div>
             <div class="right-content">
@@ -47,11 +41,10 @@ async function displayAllRecipes(recipes) {
             </div>
           </div>
         </div>
-      </a>
-    </article>
-      `
-    )
-    .join("");
+      </article>
+      `;
+    }
+  ).join("");
 }
 
 ////////// Display all ingredients //////////
