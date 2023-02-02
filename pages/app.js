@@ -63,22 +63,28 @@ async function displayAppliancesList(appliances) {
     .join("");
 }
 
-////////// Display all appliances //////////
-async function displayUtensilsList(utensils) {
-  const ulOptionUtensils = document.querySelector(".option-utensils")
+////////// Display all utensils //////////
+function displayUtensilsList(utensilsArray) {
+  const ulOptionUtensils = document.querySelector(".option-utensils");
+  const utensilSet = new Set();
+  const uniqueUtensils = utensilsArray
+    .filter(utensil => {
+      if (!utensilSet.has(utensil.ustensils)) {
+        utensilSet.add(utensil.ustensils);
+        return true;
+      }
+      return false;
+    })
+    .map(utensil => utensil.ustensils);
 
-  ulOptionUtensils.innerHTML = utensils
-  .map(
-    (liUtensil) =>
-      `
-        <li>${liUtensil.ustensils}</li>
-    `
-  )
-  .join("");
+  ulOptionUtensils.innerHTML = uniqueUtensils
+    .map(utensil => `<li>${utensil}</li>`)
+    .join("");
 }
 
+
 ////////// Display selected items dropdown  //////////
-async function displayItems() {
+async function displayItemsDropdowns() {
   const optionTypes = [
     { selector: ".option-ingredients", ulId: "#ul-ingredients", background: "#3282f7" },
     { selector: ".option-appliances", ulId: "#ul-appliances", background: "#68d9a4" },
@@ -102,6 +108,7 @@ async function displayItems() {
   // delete item on span click
   document.addEventListener("click", (event) => {
     if (event.target.tagName === "SPAN") {
+      console.log(event);
       event.target.parentElement.parentElement.remove();
     }
   });
@@ -140,7 +147,7 @@ async function init() {
   // createDropdownBehavior();
   await closeDropdowns();
   displayRecipesBySearch();
-  displayItems()
+  displayItemsDropdowns()
 
   getRecipes().then(displayRecipes);
 

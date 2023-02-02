@@ -11,9 +11,9 @@ export function dataApi() {
     const utensils = [].concat(...data.map(item => item.ustensils)); // old version js
 
     console.log(recipes);
-    // console.log(recipesName);
+    console.log(recipesName);
     // console.log(ingredients);
-    // console.log(utensils);
+    console.log(utensils);
     return {
       recipes: recipes,
       recipesName: recipesName,
