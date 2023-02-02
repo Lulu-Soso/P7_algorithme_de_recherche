@@ -21,14 +21,24 @@ async function displayRecipes(recipes) {
 async function displayIngredientsList(ingredients) {
   const ulOptionIngredients = document.querySelector(".option-ingredients")
 
+  // Create a Set to store unique ingredient names
+  const ingredientSet = new Set();
+
+  // Set the innerHTML of the selected element to the result of mapping over the ingredients array
   ulOptionIngredients.innerHTML = ingredients
   .map(
     (ingred) =>
       `
       ${ingred.ingredients
+        // For each ingredient object, filter out ingredients that are already in the ingredientSet
+        // Pour chaque objet d'ingrédient, filtrer les ingrédients qui sont déjà dans l'IngredientSet
+        .filter(ingredLi => !ingredientSet.has(ingredLi.ingredient))
         .map(
-          (ingredientLi) =>
-            `<li>${ingredientLi.ingredient}</li>`
+          (ingredLi) => {
+             // If it has not, add it to the ingredienteSet and return a list item with its name
+            ingredientSet.add(ingredLi.ingredient);
+            return `<li>${ingredLi.ingredient}</li>`
+          }
         )
         .join("")}
     `
@@ -38,16 +48,19 @@ async function displayIngredientsList(ingredients) {
 
 ////////// Display all appliances //////////
 async function displayAppliancesList(appliances) {
-  const ulOptionAppliances = document.querySelector(".option-appliances")
+  const ulOptionAppliances = document.querySelector(".option-appliances");
+
+  const applianceSet = new Set();
 
   ulOptionAppliances.innerHTML = appliances
-  .map(
-    (liAppliance) =>
-      `
-        <li>${liAppliance.appliance}</li>
-    `
-  )
-  .join("");
+    .map(liAppliance => {
+      if (!applianceSet.has(liAppliance.appliance)) {
+        applianceSet.add(liAppliance.appliance);
+        return `<li>${liAppliance.appliance}</li>`;
+      }
+    })
+    .filter(Boolean)
+    .join("");
 }
 
 ////////// Display all appliances //////////
@@ -78,6 +91,7 @@ async function displayItems() {
 
     optionType.addEventListener("click", (event) => {
       if (event.target.tagName === "LI") {
+        console.log(event);
         const selected = event.target.textContent;
         const className = background ? `style="background:${background}"` : "";
         ulType.innerHTML += `<li ${className}>${selected}<button><span aria-label="bouton de suppression">x</span></button></li>`;
@@ -97,34 +111,29 @@ async function displayItems() {
 
 
 async function displayRecipesBySearch() {
-  const cardsContainer = document.querySelector(".cards-container");
-  const inputSearch = document.querySelector(".search-header > input");
-
-  const recipes = await getRecipes();
-  // const recipesName = await getRecipesName();
-
-  inputSearch.addEventListener("input", async (e) => {
-    e.preventDefault();
-    const searchValue = e.target.value.toLowerCase();
-
-    const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchValue));
-
-    if (filteredRecipes.length === 0) {
-      cardsContainer.innerHTML = "<h2>Aucun résultat</h2>";
-    } else {
-      let cardsHTML = "";
-      for (const recipe of filteredRecipes) {
-        cardsHTML += `
-          <div class="card">
-            <h3>${recipe.name}</h3>
-            <p>${recipe.description}</p>
-          </div>
-        `;
+    const cardsContainer = document.querySelector(".cards-container");
+    const inputSearch = document.querySelector(".search-header > input");
+  
+    const data = await getRecipes();
+    const recipes = data.map(datum => recipeFactory(datum));
+  
+    inputSearch.addEventListener("input", async (e) => {
+      e.preventDefault();
+      const searchValue = e.target.value.toLowerCase();
+  
+      const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchValue));
+  
+      if (filteredRecipes.length === 0) {
+        cardsContainer.innerHTML = "<h2>Aucun résultat</h2>";
+      } else {
+        let cardsHTML = "";
+        for (const recipe of filteredRecipes) {
+          cardsHTML += recipe.getRecipeCardDOM();
+        }
+        cardsContainer.innerHTML = cardsHTML;
       }
-      cardsContainer.innerHTML = cardsHTML;
-    }
-  });
-}
+    });
+  }
 
 async function init() {
   changeInputColorForm();

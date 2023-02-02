@@ -6,18 +6,18 @@ export function dataApi() {
     let data = await response.json();
     const recipes = [...data];
     const recipesName = data.map(item => item.name).flat();
-    const ingredientsList = data.map(item => item.ingredients).flat();  // recent version js
+    const ingredientsName = data.map(item => item.ingredients.map(ingredient => `<p>${ingredient.ingredient}</p>`))  // recent version js
     const ingredients = data.map(item => item.ingredients.map(ingredient => `<p>${ingredient.ingredient}: ${ingredient.quantity}${ingredient.unit}</p>`))
     const utensils = [].concat(...data.map(item => item.ustensils)); // old version js
 
-    // console.log(recipes);
+    console.log(recipes);
     // console.log(recipesName);
     // console.log(ingredients);
     // console.log(utensils);
     return {
       recipes: recipes,
       recipesName: recipesName,
-      ingredientsList: ingredientsList,
+      ingredientsName: ingredientsName,
       ingredients: ingredients,
       utensils: utensils
     };
@@ -35,8 +35,8 @@ export function dataApi() {
     return (await fetchData()).ingredients;
   };
 
-  const getIngredientsList = async () => {
-    return (await fetchData()).ingredientsList;
+  const getIngredientsName = async () => {
+    return (await fetchData()).ingredientsName;
   };
 
   const getUtensils = async () => {
@@ -47,7 +47,7 @@ export function dataApi() {
     fetchData,
     getRecipes,
     getIngredients,
-    getIngredientsList,
+    getIngredientsName,
     getRecipesByName,
     getUtensils,
   };

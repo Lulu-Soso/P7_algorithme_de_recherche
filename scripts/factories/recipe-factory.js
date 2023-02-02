@@ -20,9 +20,7 @@ export function recipeFactory(data) {
               ${ingredients
                 .map(
                   (ingredient) =>
-                    `<p>${ingredient.ingredient}: ${
-                      ingredient.quantity ? ingredient.quantity : ""
-                    } ${ingredient.unit ? ingredient.unit : ""}</p>`
+                    `<p>${ingredient.ingredient}: ${ ingredient.quantity ? ingredient.quantity : ""} ${ingredient.unit ? ingredient.unit : ""}</p>`
                 )
                 .join("")}
               </div>
@@ -42,6 +40,6 @@ export function recipeFactory(data) {
     time,
     ingredients,
     description,
-    getRecipeCardDOM
+    getRecipeCardDOM,
   };
 }
