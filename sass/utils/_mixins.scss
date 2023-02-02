@@ -1,0 +1,75 @@
+// @mixin df-jcc-aic {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// @mixin df-jcsb-aic {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+// @mixin df-jcc-aic-fdirection-col {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// }
+
+// @mixin shadow-hover {
+//   box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.5);;
+// }
+
+// @mixin darken-shadow-hover($colour: $grey-light) {
+//   $colour: darken($colour, 40%);
+//   box-shadow: 0 17px 17px 5px $colour;
+// }
+
+// @mixin lighten-colour-hover($colour: $colour-primary) {
+//   $colour: lighten($colour, 35%);
+//   background: $colour;
+// }
+
+// @mixin button-gradient {
+//   background: linear-gradient(#ef74da, #a05adc);
+//   box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2);
+//   transition: 0.6s;
+//   cursor: pointer;
+//   border-radius: 100px;
+//   color: white;
+//   padding: 20px;
+//   &:hover {
+//     opacity: 0.8;
+//     @include shadow-hover;
+//   }
+// }
+
+// @mixin heart-hover {
+//   padding-right: 15px;
+//   position: relative;
+//   font-size: 1.5rem;
+//   .fa-regular {
+//     position: absolute;
+//   }
+//   .fa-solid {
+//     position: absolute;
+//     background-clip: text;
+//     -webkit-background-clip: text;
+//     color: transparent;
+//     &:hover {
+//       background-image: linear-gradient(#ef74da, #a05adc);
+//       animation: opacity-heart 0.6s ease;
+//     }
+//   }
+// }
+
+// @mixin ellipsis {
+//   overflow: hidden;
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+// }
+
+// @mixin opacity-spin {
+//   background-image: linear-gradient(#ef74da, #a05adc);
+// }
