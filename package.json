@@ -1,0 +1,19 @@
+{
+  "name": "p7_algorithme_de_recherche",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lulu-Soso/P7_algorithme_de_recherche.git"
+  },
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lulu-Soso/P7_algorithme_de_recherche/issues"
+  },
+  "homepage": "https://github.com/Lulu-Soso/P7_algorithme_de_recherche#readme"
+}
