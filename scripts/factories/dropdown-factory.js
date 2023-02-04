@@ -1,50 +1,39 @@
 export function dropdownFactory(data) {
-  const ingredients = data.ingredients || [];
-  const appliances = data.appliances || [];
-  const utensils = data.ustensils || [];
+  const {ingredients, appliance, utensils } = data;
+  // const ingredients = data.ingredients || [];
+  // const appliances = data.appliance || [];
+  // const utensils = data.ustensils || [];
+
+  // console.log(appliances)
 
   function getIngredientsDOM() {
-    ingredients
-      .map(
-        (data) =>
-          `
-      ${data.ingredients
-        .map((pIngredient) => `<p>${pIngredient.ingredient}</p>`)
+    return `
+    ${ingredients
+        .map(
+            (ingredient) =>
+                `${ingredient.ingredient}`
+        )
         .join("")}
     `
-      )
-      .join("");
+
   }
 
   function getAppliancesDOM() {
-    const ulOptionAppliances = document.querySelector(".option-appliances");
-
-    ulOptionAppliances.innerHTML = appliances
-      .map(
-        (liAppliance) =>
-          `
-        <li>${liAppliance.appliance}</li>
+    return `
+    ${appliance}
     `
-      )
-      .join("");
   }
 
   function getUtensilsDOM() {
-    const ulOptionUtensils = document.querySelector(".option-utensils");
-
-    ulOptionUtensils.innerHTML = utensils
-      .map(
-        (liUtensil) =>
-          `
-        <li>${liUtensil.ustensils}</li>
+    const utensils = data.ustensils;
+    return `
+    ${utensils}
     `
-      )
-      .join("");
   }
 
   return {
     ingredients,
-    appliances,
+    appliance,
     utensils,
     getIngredientsDOM,
     getAppliancesDOM,
