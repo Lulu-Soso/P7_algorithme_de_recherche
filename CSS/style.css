@@ -113,6 +113,12 @@ a {
   filter: brightness(87%);
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 }
+.dropdown-bar .dropdown.active {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.dropdown-bar .dropdown.active ul {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
 .dropdown-bar .dropdown.active input {
   width: 90%;
   min-width: 170px;

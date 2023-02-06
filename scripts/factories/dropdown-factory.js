@@ -19,6 +19,7 @@ export function dropdownFactory(data) {
   }
 
   function getAppliancesDOM() {
+    // const appliance = data.appliance;
     return `
     ${appliance}
     `
@@ -26,9 +27,8 @@ export function dropdownFactory(data) {
 
   function getUtensilsDOM() {
     const utensils = data.ustensils;
-    return `
-    ${utensils}
-    `
+    // const utensils = [].concat(...data.map(item => item.ustensils));
+    return utensils.join(", ");
   }
 
   return {

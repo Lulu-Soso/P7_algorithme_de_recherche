@@ -50,6 +50,10 @@
     }
 
     &.active {
+      box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+      ul {
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+      }
       input {
         width: 90%;
         min-width: 170px;
