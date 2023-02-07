@@ -20,17 +20,16 @@ async function displayRecipes(recipes) {
     cardsContainer.appendChild(recipeCardDOM);
   });
 
-  const uniqueAppliances = [...new Set(recipes.map(recipe => recipe.appliance))];
-  ulOptionAppliances.innerHTML = uniqueAppliances.map(appliance => `<li>${appliance}</li>`).join("");
-
 // Concatenate all the ingredients arrays from each recipe into a single array
   const uniqueIngredients = recipes.reduce((acc, recipe) => {
     return acc.concat(recipe.ingredients.map(ingredient => ingredient.ingredient));
   }, []);
-
 // Use a set to get only unique values from the uniqueIngredients array and convert it back to an array
 // Generate an HTML string with a list of <li> elements, each displaying a unique ingredient
   ulOptionIngredients.innerHTML = [...new Set(uniqueIngredients)].map(ingredient => `<li>${ingredient}</li>`).join("");
+
+  const uniqueAppliances = [...new Set(recipes.map(recipe => recipe.appliance))];
+  ulOptionAppliances.innerHTML = uniqueAppliances.map(appliance => `<li>${appliance}</li>`).join("");
 
 // Concatenate all the utensils arrays from each recipe into a single array
   const uniqueUtensils = recipes.reduce((acc, recipe) => {
@@ -179,6 +178,10 @@ async function displayRecipesBySearch() {
   const cardsContainer = document.querySelector(".cards-container");
   const inputSearch = document.querySelector(".search-header > input");
 
+  const ulOptionAppliances = document.querySelector(".option-appliances");
+  const ulOptionIngredients = document.querySelector(".option-ingredients");
+  const ulOptionUtensils = document.querySelector(".option-utensils");
+
   const data = await getRecipes();
   const recipes = data.map(datum => recipeFactory(datum));
   console.log(data)
@@ -192,14 +195,27 @@ async function displayRecipesBySearch() {
           recipe.ingredients.some(ingredient => ingredient.ingredient.toLowerCase().includes(searchValue)) ||
           recipe.description.toLowerCase().includes(searchValue)));
 
+      let cardsHTML = "";
+      const uniqueIngredients = [];
+      const uniqueAppliances = [];
+      const uniqueUtensils = [];
+      for (const recipe of filteredRecipes) {
+        cardsHTML += recipe.getRecipeCardDOM();
+        uniqueIngredients.push(...recipe.ingredients.map(ingredient => ingredient.ingredient));
+        uniqueAppliances.push(recipe.appliance);
+        uniqueUtensils.push(...recipe.ustensils);
+      }
+
+      ulOptionIngredients.innerHTML = [...new Set(uniqueIngredients)].map(ingredient => `<li>${ingredient}</li>`).join("");
+
+      ulOptionAppliances.innerHTML = [...new Set(uniqueAppliances)].map(appliance => `<li>${appliance}</li>`).join("");
+
+      ulOptionUtensils.innerHTML = [...new Set(uniqueUtensils)].map(utensil => `<li>${utensil}</li>`).join("");
+
       if (filteredRecipes.length === 0) {
         cardsContainer.innerHTML = "<h2>Aucune recette ne correspond à votre critère… vous pouvez\n" +
             "chercher « tarte aux pommes », « poisson », etc...</h2>";
       } else {
-        let cardsHTML = "";
-        for (const recipe of filteredRecipes) {
-          cardsHTML += recipe.getRecipeCardDOM();
-        }
         cardsContainer.innerHTML = cardsHTML;
       }
     }

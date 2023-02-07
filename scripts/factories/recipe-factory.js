@@ -36,7 +36,16 @@ export function recipeFactory(data) {
   }
 
   function getIngredientsDOM() {
-    return ingredients.map(ingredient => `${ingredient.ingredient}`).join("");
+    const ulOptionIngredients = document.querySelector(".option-ingredients");
+
+    // return ingredients.map(ingredient => `${ingredient.ingredient}`).join("");
+    // Concatenate all the ingredients arrays from each recipe into a single array
+    const uniqueIngredients = recipes.reduce((acc, recipe) => {
+      return acc.concat(recipe.ingredients.map(ingredient => ingredient.ingredient));
+    }, []);
+// Use a set to get only unique values from the uniqueIngredients array and convert it back to an array
+// Generate an HTML string with a list of <li> elements, each displaying a unique ingredient
+    ulOptionIngredients.innerHTML = [...new Set(uniqueIngredients)].map(ingredient => `<li>${ingredient}</li>`).join("");
   }
 
   function getAppliancesDOM() {
@@ -52,6 +61,8 @@ export function recipeFactory(data) {
     time,
     ingredients,
     description,
+    appliance,
+    ustensils,
     getRecipeCardDOM,
     getIngredientsDOM,
     getAppliancesDOM,
