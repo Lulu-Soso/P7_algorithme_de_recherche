@@ -290,6 +290,15 @@ a {
   margin-top: 25px;
   display: contents;
 }
+.items-bar #ul-ingredients li {
+  background-color: #3282f7;
+}
+.items-bar #ul-appliances li {
+  background-color: #68d9a4;
+}
+.items-bar #ul-utensils li {
+  background-color: #ed6454;
+}
 .items-bar ul {
   list-style-type: none;
   display: flex;

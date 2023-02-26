@@ -1,10 +1,5 @@
-export function dropdownFactory(data) {
-  const {ingredients, appliance, utensils } = data;
-  // const ingredients = data.ingredients || [];
-  // const appliances = data.appliance || [];
-  // const utensils = data.ustensils || [];
-
-  // console.log(appliances)
+export function dropdownFactory(recipes) {
+  const {ingredients, appliance, utensils } = recipes;
 
   function getIngredientsDOM() {
     return `
@@ -15,7 +10,6 @@ export function dropdownFactory(data) {
         )
         .join("")}
     `
-
   }
 
   function getAppliancesDOM() {
@@ -26,8 +20,7 @@ export function dropdownFactory(data) {
   }
 
   function getUtensilsDOM() {
-    const utensils = data.ustensils;
-    // const utensils = [].concat(...data.map(item => item.ustensils));
+    const utensils = recipes.ustensils;
     return utensils.join(", ");
   }
 

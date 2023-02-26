@@ -6,70 +6,73 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png"/>
   <title>Les petits plats</title>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <div class="search-banner">
-        <img src="./assets/images/logo.png" alt="logo du site" aria-label=" logo du site Les petits plats">
-        <form action="#" class="search-header">
-          <label for="search"></label>
-          <input type="text" id="search" autocomplete="off" placeholder="Rechercher une recette">
-          <span><i class="fa-solid fa-magnifying-glass"></i></span>
-        </form>
+<div class="container">
+  <header>
+    <div class="search-banner">
+      <img src="./assets/images/logo.png" alt="logo du site" aria-label=" logo du site Les petits plats">
+      <form action="#" class="search-header">
+        <label for="search"></label>
+        <input type="text" id="search" autocomplete="off" placeholder="Rechercher une recette">
+        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <section class="dropdown-items">
+      <div class="items-bar">
+        <ul id="ul-ingredients" class="selected-option-list" data-option-type="ingredient"></ul>
+        <ul id="ul-appliances" class="selected-option-list" data-option-type="appliance"></ul>
+        <ul id="ul-utensils" class="selected-option-list" data-option-type="utensil"></ul>
       </div>
-    </header>
 
-    <main>
-      <section class="dropdown-items">
-        <div class="items-bar">
-          <ul id="ul-ingredients"></ul>
-          <ul id="ul-appliances"></ul>
-          <ul id="ul-utensils"></ul>
+      <div class="dropdown-bar">
+        <div class="dropdown">
+          <form id="ingredients-form" class="dropdown-ingredients">
+            <label for="ingredients"></label>
+            <input type="text" id="ingredients" class="input-ingredients" autocomplete="off" readonly
+                   placeholder="Ingredients" value="Ingredients" data-placeholder="Ingredients">
+            <ul class="option-ingredients option-list" data-option-type="ingredient"></ul>
+          </form>
         </div>
-
-        <div class="dropdown-bar">
-          <div class="dropdown">
-            <form id="ingredients-form" class="dropdown-ingredients">
-              <label for="ingredients"></label>
-              <input type="text" id="ingredients" class="input-ingredients" autocomplete="off" readonly placeholder="Ingredients" value="Ingredients" data-placeholder="Ingredients">
-              <ul class="option-ingredients"></ul>
-            </form>
-          </div>
-          <div class="dropdown">
-            <form id="appliances-form" class="dropdown-appliances">
-              <label for="appliances"></label>
-              <input type="text" id="appliances" class="input-appliances" autocomplete="off" readonly placeholder="Appareils" value="Appareils" data-placeholder="Appareils">
-              <ul class="option-appliances"></ul>
-            </form>
-          </div>
-          <div class="dropdown">
-            <form id="utensils-form" class="dropdown-utensils">
-              <label for="utensils"></label>
-              <input type="text" id="utensils" class="input-utensils" autocomplete="off" readonly placeholder="Ustensils" value="Ustensils" data-placeholder="Ustensils">
-              <ul class="option-utensils"></ul>
-            </form>
-          </div>
+        <div class="dropdown">
+          <form id="appliances-form" class="dropdown-appliances">
+            <label for="appliances"></label>
+            <input type="text" id="appliances" class="input-appliances" autocomplete="off" readonly
+                   placeholder="Appareils" value="Appareils" data-placeholder="Appareils">
+            <ul class="option-appliances option-list" data-option-type="appliance"></ul>
+          </form>
         </div>
-      </section>
+        <div class="dropdown">
+          <form id="utensils-form" class="dropdown-utensils">
+            <label for="utensils"></label>
+            <input type="text" id="utensils" class="input-utensils" autocomplete="off" readonly
+                   placeholder="Ustensils" value="Ustensils" data-placeholder="Ustensils">
+            <ul class="option-utensils option-list" data-option-type="utensil"></ul>
+          </form>
+        </div>
+      </div>
+    </section>
 
-      <section class="list-cards">
-        <div class="cards-container"></div>
-      </section>
-    </main>
+    <section class="list-cards">
+      <div class="cards-container"></div>
+    </section>
+  </main>
 
-  </div>
+</div>
 
-  <!-- add attribute type ="module" for imported functions-->
-  <script src="./pages/app.js" type="module"></script>
+<!-- add attribute type ="module" for imported functions-->
+<script src="./pages/app.js" type="module"></script>
 </body>
 
 </html>
