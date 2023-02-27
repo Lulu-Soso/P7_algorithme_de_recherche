@@ -7,7 +7,6 @@ export const changeInputColorForm = () => {
   });
   document.addEventListener("click", (event) => {
     if (!event.target.closest("#search")) {
-      // input.value = "";
       input.style.backgroundColor = "";
     }
   });

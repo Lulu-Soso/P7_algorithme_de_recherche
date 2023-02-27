@@ -1,35 +1,26 @@
 export function dataApi() {
-  const URL = "data/data.json";
-  const fetchData = async () => {
-    let response = await fetch(URL);
-    let data = await response.json();
-    const recipes = [...data];
-    const appliances = data.map(item => item.appliance).flat();
-    const ingredients = data.map(item => item.ingredients.map(ingredient => `<p>${ingredient.ingredient}: ${ingredient.quantity}${ingredient.unit}</p>`))
-    const utensils = data.map(item => item.ustensils).flat();
+    const URL = "data/data.json";
+    const fetchData = async () => {
+        let response = await fetch(URL);
+        let data = await response.json();
+        const recipes = [...data];
 
-    // console.log(recipes);
-    // console.log(appliances);
-    // console.log(ingredients);
-    // console.log(utensils);
-    return {
-      "recipes": recipes,
-      "ingredients": ingredients,
-      "appliances": appliances,
-      "utensils": utensils,
+        // console.log(recipes);
+        return {
+            "recipes": recipes
+        };
     };
-  };
 
-  const getRecipes = async () => {
-      return (await fetchData()).recipes;
-  };
+    const getRecipes = async () => {
+        return (await fetchData()).recipes;
+    };
 
     const getIngredients = async (recipes) => {
         const ulOptionIngredients = document.querySelector(".option-ingredients");
         // Concatenate all the ingredients arrays from each recipe into a single array
-        const uniqueIngredients = recipes.reduce((acc, recipe) => {
+        const uniqueIngredients = [...new Set(recipes.reduce((acc, recipe) => {
             return acc.concat(recipe.ingredients.map((ingredient) => capitalize(ingredient.ingredient)));
-        }, []);
+        }, []))];
 
         function capitalize(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
@@ -76,11 +67,11 @@ export function dataApi() {
             .join("");
     };
 
-  return {
-    fetchData,
-    getRecipes,
-    getIngredients,
-    getAppliances,
-    getUtensils
-  };
+    return {
+        fetchData,
+        getRecipes,
+        getIngredients,
+        getAppliances,
+        getUtensils
+    };
 }

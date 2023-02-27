@@ -195,7 +195,7 @@ a {
   width: 667px;
   display: flex;
   flex-wrap: wrap;
-  flex: 0 0 33, 333%;
+  flex: 0 0 33.3333%;
   padding: 10px;
 }
 .dropdown-bar .dropdown .dropdown-appliances {
@@ -218,7 +218,7 @@ a {
   width: 667px;
   display: flex;
   flex-wrap: wrap;
-  flex: 0 0 33, 333%;
+  flex: 0 0 33.3333%;
   padding: 10px;
 }
 .dropdown-bar .dropdown .dropdown-utensils {
@@ -241,32 +241,29 @@ a {
   width: 667px;
   display: flex;
   flex-wrap: wrap;
-  flex: 0 0 33, 333%;
+  flex: 0 0 33.3333%;
   padding: 10px;
 }
 .dropdown-bar .dropdown .dropdown-ingredients input {
   background-color: #3282f7;
-  margin: 0;
+  margin: 0 0 0 10px;
   height: 45px;
   border: none;
   outline: none;
-  margin-left: 10px;
 }
 .dropdown-bar .dropdown .dropdown-appliances input {
   background-color: #68d9a4;
-  margin: 0;
+  margin: 0 0 0 10px;
   height: 45px;
   border: none;
   outline: none;
-  margin-left: 10px;
 }
 .dropdown-bar .dropdown .dropdown-utensils input {
   background-color: #ed6454;
-  margin: 0;
+  margin: 0 0 0 10px;
   height: 45px;
   border: none;
   outline: none;
-  margin-left: 10px;
 }
 .dropdown-bar .dropdown .option-ingredients li,
 .dropdown-bar .dropdown .option-appliances li,
@@ -275,6 +272,12 @@ a {
   flex: 0 0 33.333%;
   padding: 12px 20px;
   cursor: pointer;
+}
+.dropdown-bar .dropdown .option-ingredients li .selected,
+.dropdown-bar .dropdown .option-appliances li .selected,
+.dropdown-bar .dropdown .option-utensils li .selected {
+  background-color: #8d8686;
+  border-radius: 5px;
 }
 .dropdown-bar .dropdown .option-ingredients li:hover,
 .dropdown-bar .dropdown .option-appliances li:hover,
