@@ -24,25 +24,30 @@ function arrayRemove(options, optionToRemove) {
     return options.filter((option) => option !== optionToRemove);
 }
 
+// Cette fonction asynchrone prend un tableau de recettes en entrée.
 async function initOptionLists(recipes) {
+
+    // Appeler la fonction asynchrone getIngredients() pour récupérer tous les ingrédients dans les recettes. Attendre que la promesse se résolve avant de continuer. etc..
     await getIngredients(recipes)
     await getAppliances(recipes)
     await getUtensils(recipes)
 }
 
+
+// Cette fonction asynchrone prend un tableau de recettes en entrée
 async function displayRecipes(recipes) {
-    // Cette fonction asynchrone prend un tableau de recettes en entrée
+    // Pour chaque recette dans le tableau de recettes, créer un élément de modèle de recette
     recipes.forEach((recipe) => {
-        // Pour chaque recette dans le tableau de recettes, créer un élément de modèle de recette
-        const recipeModel = recipeFactory(recipe);
 
         // Créer un nouvel élément HTML qui représente la carte de recette
-        const recipeCardDOM = document.createElement("article");
+        const recipeModel = recipeFactory(recipe);
 
         // Définir le contenu HTML de l'élément de carte de recette en utilisant le HTML généré par le modèle de recette
-        recipeCardDOM.innerHTML = recipeModel.getRecipeCardDOM();
+        const recipeCardDOM = document.createElement("article");
 
         // Ajouter l'élément de carte de recette à un conteneur de cartes existant dans le document HTML
+        recipeCardDOM.innerHTML = recipeModel.getRecipeCardDOM();
+
         cardsContainer.appendChild(recipeCardDOM);
     });
 }
@@ -68,7 +73,6 @@ function initFilter() {
      */
     // Pour chaque liste d'options avancées, ajoute un écouteur d'événement pour les clics sur les éléments de la liste
     optionLists.forEach(list => {
-        console.log(optionLists)
         list.addEventListener('click', async e => {
             if (e.target.tagName === 'LI') {
                 const selectedOption = e.target.textContent;
@@ -153,20 +157,26 @@ async function filterRecipes(filters) {
     });
 }
 
-
+// Cette fonction asynchrone prend un objet de filtres en entrée
 async function displayFilteredRecipes(filters) {
+    // Appeler la fonction asynchrone filterRecipes() avec les filtres pour récupérer un tableau de recettes filtrées. Attendre que la promesse se résolve avant de continuer.
     let filteredRecipes = await filterRecipes(filters);
+
+    // Effacer le contenu HTML du conteneur de cartes avant d'afficher les nouvelles recettes filtrées
     cardsContainer.innerHTML = "";
 
+    // Si le tableau de recettes filtrées est vide, afficher un message d'erreur
     if (filteredRecipes.length === 0) {
         cardsContainer.innerHTML = "<h2>Aucune recette ne correspond à votre critère… vous pouvez\n" +
             "chercher « tarte aux pommes », « poisson », etc...</h2>";
     } else {
+        // Sinon, afficher les recettes filtrées, initialiser les listes déroulantes des filtres, et filtrer les options de filtre en fonction de la recherche utilisateur.
         await displayRecipes(filteredRecipes)
         await initOptionLists(filteredRecipes)
         filterOptionsBySearch(filteredRecipes)
     }
 }
+
 
 // Fonction qui filtre et affiche les options d'un élément de formulaire.
 function displayFilteredOptions(inputOption, dataList) {
