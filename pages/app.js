@@ -31,13 +31,22 @@ async function initOptionLists(recipes) {
 }
 
 async function displayRecipes(recipes) {
+    // Cette fonction asynchrone prend un tableau de recettes en entrée
     recipes.forEach((recipe) => {
+        // Pour chaque recette dans le tableau de recettes, créer un élément de modèle de recette
         const recipeModel = recipeFactory(recipe);
+
+        // Créer un nouvel élément HTML qui représente la carte de recette
         const recipeCardDOM = document.createElement("article");
+
+        // Définir le contenu HTML de l'élément de carte de recette en utilisant le HTML généré par le modèle de recette
         recipeCardDOM.innerHTML = recipeModel.getRecipeCardDOM();
+
+        // Ajouter l'élément de carte de recette à un conteneur de cartes existant dans le document HTML
         cardsContainer.appendChild(recipeCardDOM);
     });
 }
+
 
 function initFilter() {
 
