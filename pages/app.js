@@ -110,18 +110,18 @@ function initFilter() {
 async function filterRecipes(filters) {
     const recipes = await getRecipes();
 
-    return recipes.filter(recipe => {
-        let searchFields = [recipe.name, recipe.description, ...recipe.ingredients.map(ingredient => ingredient.ingredient)];
-        let ingredientSet = new Set(recipe.ingredients.map(ingredient => ingredient.ingredient.toLowerCase()));
-        let utensilSet = new Set(recipe.ustensils.map(utensil => utensil.toLowerCase()));
-
-        let searchMatch = searchFields.some(field => field.toLowerCase().includes(filters.search.toLowerCase()));
-        let ingredientMatch = filters.ingredientOptions.every(option => ingredientSet.has(option.toLowerCase()));
-        let applianceMatch = filters.applianceOptions.every(option => option.toLowerCase() === recipe.appliance.toLowerCase());
-        let utensilMatch = filters.utensilOptions.every(option => utensilSet.has(option.toLowerCase()));
-
-        return searchMatch && ingredientMatch && applianceMatch && utensilMatch;
-    });
+    // return recipes.filter(recipe => {
+    //     let searchFields = [recipe.name, recipe.description, ...recipe.ingredients.map(ingredient => ingredient.ingredient)];
+    //     let ingredientSet = new Set(recipe.ingredients.map(ingredient => ingredient.ingredient.toLowerCase()));
+    //     let utensilSet = new Set(recipe.ustensils.map(utensil => utensil.toLowerCase()));
+    //
+    //     let searchMatch = searchFields.some(field => field.toLowerCase().includes(filters.search.toLowerCase()));
+    //     let ingredientMatch = filters.ingredientOptions.every(option => ingredientSet.has(option.toLowerCase()));
+    //     let applianceMatch = filters.applianceOptions.every(option => option.toLowerCase() === recipe.appliance.toLowerCase());
+    //     let utensilMatch = filters.utensilOptions.every(option => utensilSet.has(option.toLowerCase()));
+    //
+    //     return searchMatch && ingredientMatch && applianceMatch && utensilMatch;
+    // });
 }
 
 async function displayFilteredRecipes(filters) {
