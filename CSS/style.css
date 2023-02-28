@@ -269,7 +269,7 @@ a {
 .dropdown-bar .dropdown .option-appliances li,
 .dropdown-bar .dropdown .option-utensils li {
   display: flex;
-  flex: 0 0 33.333%;
+  flex: 0 0 33.3333%;
   padding: 12px 20px;
   cursor: pointer;
 }

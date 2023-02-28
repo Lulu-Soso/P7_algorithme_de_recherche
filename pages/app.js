@@ -109,6 +109,116 @@ function initFilter() {
 
 async function filterRecipes(filters) {
     const recipes = await getRecipes();
+    let filteredRecipes = [];
+
+    for (let i = 0; i < recipes.length; i++) {
+        const recipe = recipes[i]
+        // console.log(recipe)
+
+        // Par défaut, il doit retourner la recette et ses options
+        let searchMatch = true;
+        let ingredientMatch = true;
+        let applianceMatch = true;
+        let utensilMatch = true;
+
+        // Récupération des ingredients de chaque recette
+        let ingredients = [];
+        for (let j = 0; j < recipe.ingredients.length; j++) {
+            const ingredient = recipe.ingredients[j];
+            ingredients.push(ingredient.ingredient.toLowerCase())
+            // console.log(ingredients)
+        }
+
+        /**
+         * RECHERCHE GLOBALE
+         */
+
+        // Filtrage de la valeur de la recherche par rapport aux noms de la recette, aux ingrédients et de la description
+        if (filters.search.length >= 3) {
+            // S'il y a une recherche, alors on retournera faux avant la vérification
+            searchMatch = false;
+
+            let searchFields = [recipe.name, recipe.description, ...ingredients]
+            // console.log(searchFields)
+
+            for (let j = 0; j < searchFields.length; j++) {
+                const field = searchFields[j];
+                // console.log(field)
+                if (field.toLowerCase().includes(filters.search.toLowerCase())) {
+                    searchMatch = true
+                }
+            }
+        }
+
+        /**
+         * FILTRE PAR INGREDIENT
+         */
+        if (filters.ingredientOptions.length > 0) {
+            ingredientMatch = false;
+
+            // Si les ingredients contiennent des options de filtre
+            let ingredientMatchs = [];
+
+            for (let j = 0; j < filters.ingredientOptions.length; j++) {
+                const ingredientOption = filters.ingredientOptions[j];
+                for (let k = 0; k < ingredients.length; k++) {
+                    const ingredient = ingredients[k];
+
+                    if (ingredientOption.toLowerCase() === ingredient) {
+                        ingredientMatchs.push(ingredient)
+                    }
+                }
+            }
+            ingredientMatch = ingredientMatchs.length === filters.ingredientOptions.length;
+        }
+
+        /**
+         * FILTRE PAR APPAREIL
+         */
+        if (filters.applianceOptions.length > 0) {
+            applianceMatch = false;
+            for (let j = 0; j < filters.applianceOptions.length; j++) {
+                const applianceOption = filters.applianceOptions[j];
+
+                if (applianceOption.toLowerCase() === recipe.appliance.toLowerCase()) {
+                    applianceMatch = true
+                }
+            }
+        }
+
+        /**
+         * FILTRE PAR USTENSILE
+         */
+        if (filters.utensilOptions.length > 0) {
+            utensilMatch = false;
+            // Récupération des ustensiles de chaque recette
+            let utensils = [];
+            for (let j = 0; j < recipe.ustensils.length; j++) {
+                const utensil = recipe.ustensils[j];
+                utensils.push(utensil.toLowerCase())
+            }
+
+            let utensilMatchs = [];
+            for (let k = 0; k < filters.utensilOptions.length; k++) {
+                const utensilOption = filters.utensilOptions[k];
+                for (let e = 0; e < utensils.length; e++) {
+                    const utensil = utensils[e];
+
+                    if (utensilOption.toLowerCase() === utensil) {
+                        utensilMatchs.push(utensil)
+                    }
+                }
+            }
+            utensilMatch = utensilMatchs.length === filters.utensilOptions.length;
+        }
+
+        if (searchMatch && ingredientMatch && applianceMatch && utensilMatch) {
+            filteredRecipes.push(recipe);
+        }
+
+    }
+
+    return filteredRecipes
 
     // return recipes.filter(recipe => {
     //     let searchFields = [recipe.name, recipe.description, ...recipe.ingredients.map(ingredient => ingredient.ingredient)];
