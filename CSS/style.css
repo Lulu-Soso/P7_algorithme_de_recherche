@@ -273,11 +273,10 @@ a {
   padding: 12px 20px;
   cursor: pointer;
 }
-.dropdown-bar .dropdown .option-ingredients li .selected,
-.dropdown-bar .dropdown .option-appliances li .selected,
-.dropdown-bar .dropdown .option-utensils li .selected {
-  background-color: #8d8686;
-  border-radius: 5px;
+.dropdown-bar .dropdown .option-ingredients li.selected,
+.dropdown-bar .dropdown .option-appliances li.selected,
+.dropdown-bar .dropdown .option-utensils li.selected {
+  color: #949494;
 }
 .dropdown-bar .dropdown .option-ingredients li:hover,
 .dropdown-bar .dropdown .option-appliances li:hover,

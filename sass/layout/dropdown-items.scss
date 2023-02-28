@@ -216,9 +216,8 @@
       padding: 12px 20px;
       cursor: pointer;
 
-      .selected {
-        background-color: #8d8686;
-        border-radius: 5px;
+      &.selected {
+        color: #949494;
       }
       
       &:hover {
