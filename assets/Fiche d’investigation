@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-07T22:52:48.601Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="SDI_Kwb7ZRJHchFzJjFZ" version="21.0.2" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2023-03-07T23:03:44.328Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="zQ-E7eqlzlScf58BWAot" version="21.0.2" type="github" pages="7">
   <diagram name="Liste-investigation-choix-option" id="8eX9RUuKUUPeNjJfSX3e">
     <mxGraphModel dx="1434" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -357,7 +357,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="w_1DPUKHBqjSj9AcO-hk-19" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;vérification&amp;nbsp;des&lt;br&gt;champs et options &lt;br&gt;si existe?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;direction=north;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="JzlzcUPOXyTfx-voTCkb-1">
+        <mxCell id="w_1DPUKHBqjSj9AcO-hk-19" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;vérification&amp;nbsp;des&lt;br&gt;champs et options &lt;br&gt;ok?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;direction=north;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="JzlzcUPOXyTfx-voTCkb-1">
           <mxGeometry x="20.939999999999998" y="775.94" width="158.12" height="158.12" as="geometry" />
         </mxCell>
         <mxCell id="w_1DPUKHBqjSj9AcO-hk-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="JzlzcUPOXyTfx-voTCkb-1" source="w_1DPUKHBqjSj9AcO-hk-20" target="w_1DPUKHBqjSj9AcO-hk-18">
