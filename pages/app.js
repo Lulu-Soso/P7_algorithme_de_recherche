@@ -107,6 +107,7 @@ function initFilter() {
     });
 }
 
+/************************************ Option-1 Native Loops ************************************/
 async function filterRecipes(filters) {
     const recipes = await getRecipes();
     let filteredRecipes = [];
@@ -233,6 +234,7 @@ async function filterRecipes(filters) {
     //     return searchMatch && ingredientMatch && applianceMatch && utensilMatch;
     // });
 }
+/************************************ End Option-1 Native Loops ************************************/
 
 async function displayFilteredRecipes(filters) {
     let filteredRecipes = await filterRecipes(filters);

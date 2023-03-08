@@ -15,7 +15,7 @@ export function dataApi() {
         return (await fetchData()).recipes;
     };
 
-    const getIngredients = async (recipes) => {
+    const getIngredients = async (recipes, selectedIngredients) => {
         const ulOptionIngredients = document.querySelector(".option-ingredients");
         // Concatenate all the ingredients arrays from each recipe into a single array
         const uniqueIngredients = [...new Set(recipes.reduce((acc, recipe) => {
@@ -28,12 +28,14 @@ export function dataApi() {
 
         // Use a set to get only unique values from the uniqueIngredients array and convert it back to an array
         // Generate an HTML string with a list of <li> elements, each displaying a unique ingredient
-        ulOptionIngredients.innerHTML = [...new Set(uniqueIngredients)]
-            .map((ingredient) => `<li>${ingredient}</li>`)
-            .join("");
+        ulOptionIngredients.innerHTML = [...new Set(uniqueIngredients)].map(ingredient => {
+            const selected = selectedIngredients.includes(ingredient)
+            return  `<li class="${selected ? 'selected' : ''}">${ingredient}</li>`
+        }).join("");
+
     };
 
-    const getAppliances = async (recipes) => {
+    const getAppliances = async (recipes, selectedAppliances) => {
         const ulOptionAppliances = document.querySelector(".option-appliances");
 
         const uniqueAppliances = [...new Set(recipes.map((recipe) => capitalize(recipe.appliance)))];
@@ -42,12 +44,13 @@ export function dataApi() {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
 
-        ulOptionAppliances.innerHTML = uniqueAppliances
-            .map((appliance) => `<li>${appliance}</li>`)
-            .join("");
+        ulOptionAppliances.innerHTML = uniqueAppliances.map(appliance => {
+            const selected = selectedAppliances.includes(appliance)
+            return `<li class="${selected ? 'selected' : ''}">${appliance}</li>`
+        }).join("");
     };
 
-    const getUtensils = async (recipes) => {
+    const getUtensils = async (recipes, selectedUtensils) => {
         const ulOptionUtensils = document.querySelector(".option-utensils");
 
         // Concatenate all the utensils arrays from each recipe into a single array
@@ -62,9 +65,10 @@ export function dataApi() {
 
         // Use a set to get only unique values from the uniqueUtensils array and convert it back to an array
         // Generate an HTML string with a list of <li> elements, each displaying a unique utensil
-        ulOptionUtensils.innerHTML = [...new Set(uniqueUtensils)]
-            .map((utensil) => `<li>${utensil}</li>`)
-            .join("");
+        ulOptionUtensils.innerHTML = [...new Set(uniqueUtensils)].map(utensil => {
+            const selected = selectedUtensils.includes(utensil)
+            return `<li class="${selected ? 'selected' : ''}">${utensil}</li>`
+        }).join("");
     };
 
     return {
