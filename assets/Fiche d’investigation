@@ -1,17 +1,17 @@
-<mxfile host="app.diagrams.net" modified="2023-03-08T08:25:22.579Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="7hIQsC1sHzRLpTpfKNdj" version="21.0.2" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2023-03-08T08:33:29.256Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="nSvGyqAdYvzVZutNoapu" version="21.0.2" type="github" pages="7">
   <diagram name="Liste-investigation-choix-option" id="8eX9RUuKUUPeNjJfSX3e">
     <mxGraphModel dx="1434" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="l2BKG69BTFn6DSu1vz-n-1" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&amp;nbsp;&lt;span style=&quot;background-color: rgb(102, 204, 0);&quot;&gt;Fonctionnalité&lt;/span&gt;:&lt;/span&gt;&amp;nbsp;Recherche principale des recettes" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;labelBackgroundColor=default;align=left;" parent="1" vertex="1">
-          <mxGeometry x="10" y="90" width="404" height="60" as="geometry" />
+          <mxGeometry x="9" y="120" width="404" height="60" as="geometry" />
         </mxCell>
         <mxCell id="l2BKG69BTFn6DSu1vz-n-11" value="&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border: none; padding: 0px; font-size: 15px;&quot;&gt;Fonctionnalité #2&amp;nbsp; &amp;nbsp;&lt;/blockquote&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;labelBackgroundColor=default;align=right;" parent="1" vertex="1">
-          <mxGeometry x="414" y="90" width="406" height="60" as="geometry" />
+          <mxGeometry x="413" y="120" width="406" height="60" as="geometry" />
         </mxCell>
         <mxCell id="l2BKG69BTFn6DSu1vz-n-14" value="&lt;b&gt;&amp;nbsp;&lt;span style=&quot;background-color: rgb(102, 204, 0);&quot;&gt;Problématique&lt;/span&gt;: &lt;/b&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;/span&gt;&lt;b&gt;Afin de pouvoir rechercher les recettes plus rapidement, nous cherchons à créer un&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;      &lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;b&gt;filtre&amp;nbsp;de recherche&amp;nbsp; le plus fluide possible&amp;nbsp;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=15;align=left;" parent="1" vertex="1">
-          <mxGeometry x="10" y="150" width="810" height="80" as="geometry" />
+          <mxGeometry x="9" y="180" width="810" height="80" as="geometry" />
         </mxCell>
         <mxCell id="AmQlc-150cKSMBZJ5Z8Q-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;u&gt;&lt;b&gt;Fiche d&#39;investigation: Rechercher des recettes&lt;/b&gt;&lt;/u&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="204" y="40" width="420" height="40" as="geometry" />
@@ -20,16 +20,16 @@
           <mxGeometry x="20" y="13" width="157" height="67" as="geometry" />
         </mxCell>
         <mxCell id="oF-3l0IYJJduDTEZYDOG-1" value="&lt;b&gt;&amp;nbsp;&lt;span style=&quot;background-color: rgb(102, 204, 0);&quot;&gt;Option 1&lt;/span&gt;:&amp;nbsp; &amp;nbsp;Méthode des &lt;span style=&quot;background-color: rgb(255, 153, 51);&quot;&gt;Boucles natives&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=15;align=left;" parent="1" vertex="1">
-          <mxGeometry x="10" y="300" width="410" height="110" as="geometry" />
+          <mxGeometry x="9" y="330" width="410" height="110" as="geometry" />
         </mxCell>
         <mxCell id="B0LEgTKcxPNfPMWZTYU8-1" value="&lt;font style=&quot;font-size: 15px;&quot; color=&quot;#000000&quot;&gt;Algorithme fonctionnalité pour filtrer les recettes&amp;nbsp;&amp;nbsp;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=17;fontColor=#FFFFFF;align=center;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="10" y="230" width="810" height="70" as="geometry" />
+          <mxGeometry x="9" y="260" width="810" height="70" as="geometry" />
         </mxCell>
         <mxCell id="L0UQswcFRdHEYQAvfNKD-1" value="&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;font-weight: bold; background-color: rgb(102, 204, 0);&quot;&gt;Option 2&lt;/span&gt;&lt;b&gt;:&amp;nbsp; &amp;nbsp;Méthode des &lt;span style=&quot;background-color: rgb(255, 255, 102);&quot;&gt;Tableaux d&#39;objets&lt;/span&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=15;align=left;" vertex="1" parent="1">
-          <mxGeometry x="420" y="300" width="400" height="110" as="geometry" />
+          <mxGeometry x="419" y="330" width="400" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="L0UQswcFRdHEYQAvfNKD-3" value="&lt;b&gt;&amp;nbsp;&lt;span style=&quot;background-color: rgb(102, 204, 0);&quot;&gt;Solution retenue&lt;/span&gt;: &lt;br&gt;&lt;/b&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt; &lt;span style=&quot;&quot;&gt; &lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;b&gt;&amp;nbsp;En général, les boucles natives sont souvent plus rapides et plus efficaces que les méthodes des Tableaux d&#39;objets.&lt;br&gt;&lt;br&gt;Cependant, les méthodes des Tableaux d&#39;objets sont souvent plus expressives et plus faciles à comprendre, ce qui peut rendre le code plus lisible, plus court et plus maintenable&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;J&#39;ai retenu l&#39;option 2: La méthode des &lt;span style=&quot;background-color: rgb(255, 255, 102);&quot;&gt;tableaux d&#39;objets&lt;/span&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=15;align=left;" vertex="1" parent="1">
-          <mxGeometry x="10" y="410" width="810" height="250" as="geometry" />
+        <mxCell id="L0UQswcFRdHEYQAvfNKD-3" value="&lt;b&gt;&amp;nbsp;&lt;span style=&quot;background-color: rgb(102, 204, 0);&quot;&gt;Solution retenue&lt;/span&gt;: &lt;br&gt;&lt;/b&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt; &lt;span style=&quot;&quot;&gt; &lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;b&gt;&amp;nbsp;En général, les boucles natives sont souvent plus rapides et plus efficaces que les méthodes des Tableaux d&#39;objets.&lt;br&gt;&lt;br&gt;Cependant, les méthodes des Tableaux d&#39;objets sont souvent plus expressives et plus faciles à comprendre, ce qui peut rendre le code plus lisible, plus court et plus maintenable&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;J&#39;ai retenu la solution de l&#39;option 2: La méthode des &lt;span style=&quot;background-color: rgb(255, 255, 102);&quot;&gt;tableaux d&#39;objets&lt;/span&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=15;align=left;" vertex="1" parent="1">
+          <mxGeometry x="9" y="440" width="810" height="250" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
