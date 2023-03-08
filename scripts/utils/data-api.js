@@ -15,16 +15,16 @@ export function dataApi() {
         return (await fetchData()).recipes;
     };
 
+    function capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     const getIngredients = async (recipes, selectedIngredients) => {
         const ulOptionIngredients = document.querySelector(".option-ingredients");
         // Concatenate all the ingredients arrays from each recipe into a single array
         const uniqueIngredients = [...new Set(recipes.reduce((acc, recipe) => {
             return acc.concat(recipe.ingredients.map((ingredient) => capitalize(ingredient.ingredient)));
         }, []))];
-
-        function capitalize(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
 
         // Use a set to get only unique values from the uniqueIngredients array and convert it back to an array
         // Generate an HTML string with a list of <li> elements, each displaying a unique ingredient
@@ -40,10 +40,6 @@ export function dataApi() {
 
         const uniqueAppliances = [...new Set(recipes.map((recipe) => capitalize(recipe.appliance)))];
 
-        function capitalize(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
-
         ulOptionAppliances.innerHTML = uniqueAppliances.map(appliance => {
             const selected = selectedAppliances.includes(appliance)
             return `<li class="${selected ? 'selected' : ''}">${appliance}</li>`
@@ -58,10 +54,6 @@ export function dataApi() {
             // Convert each utensil to uppercase and concatenate them
             return acc.concat(recipe.ustensils.map((utensil) => capitalize(utensil)));
         }, []);
-
-        function capitalize(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
 
         // Use a set to get only unique values from the uniqueUtensils array and convert it back to an array
         // Generate an HTML string with a list of <li> elements, each displaying a unique utensil
