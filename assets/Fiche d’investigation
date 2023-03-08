@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-08T10:37:17.403Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="kk17mKRLzZ1_a_xJqQam" version="21.0.2" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2023-03-08T10:46:00.975Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="57AtlHJ0uNPMhQf6Edes" version="21.0.2" type="github" pages="8">
   <diagram name="Liste-investigation-choix-option" id="8eX9RUuKUUPeNjJfSX3e">
     <mxGraphModel dx="1434" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -264,6 +264,15 @@
             <mxPoint x="166" y="475" as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="uSBnYH-jOzqFzphEHPcJ-1" value="&lt;b style=&quot;font-size: 19px;&quot;&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 153, 51);&quot;&gt;Option 1&lt;/span&gt; ou &lt;span style=&quot;background-color: rgb(255, 255, 102);&quot;&gt;Option 2&lt;/span&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="470" y="705" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uSBnYH-jOzqFzphEHPcJ-3" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="uSBnYH-jOzqFzphEHPcJ-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="357.18" y="720" as="sourcePoint" />
+            <mxPoint x="407.18" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
@@ -522,7 +531,7 @@
         <mxCell id="8O5UtX_K-I0uDTSgWOAm-64" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Retourner la variable filteredRecipes contenant toutes les recettes filtrées.&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;labelBorderColor=none;fontSize=16;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="EOW8oVD7TqiMgnvaM2wM-1">
           <mxGeometry x="270" y="1070" width="340" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="8O5UtX_K-I0uDTSgWOAm-68" value="&lt;font style=&quot;font-size: 14px; background-color: rgb(255, 153, 51);&quot;&gt;Option 1&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="EOW8oVD7TqiMgnvaM2wM-1">
+        <mxCell id="8O5UtX_K-I0uDTSgWOAm-68" value="&lt;font style=&quot;font-size: 14px; background-color: rgb(255, 153, 51);&quot;&gt;Option 1&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="EOW8oVD7TqiMgnvaM2wM-1">
           <mxGeometry x="740" y="20" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="8O5UtX_K-I0uDTSgWOAm-69" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;oui&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="EOW8oVD7TqiMgnvaM2wM-1">
