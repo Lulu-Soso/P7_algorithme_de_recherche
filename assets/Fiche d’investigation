@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-08T08:23:54.045Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="P2u1APl3vuRRCTgHgbsO" version="21.0.2" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2023-03-08T08:25:22.579Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="7hIQsC1sHzRLpTpfKNdj" version="21.0.2" type="github" pages="7">
   <diagram name="Liste-investigation-choix-option" id="8eX9RUuKUUPeNjJfSX3e">
     <mxGraphModel dx="1434" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -22,7 +22,7 @@
         <mxCell id="oF-3l0IYJJduDTEZYDOG-1" value="&lt;b&gt;&amp;nbsp;&lt;span style=&quot;background-color: rgb(102, 204, 0);&quot;&gt;Option 1&lt;/span&gt;:&amp;nbsp; &amp;nbsp;Méthode des &lt;span style=&quot;background-color: rgb(255, 153, 51);&quot;&gt;Boucles natives&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=15;align=left;" parent="1" vertex="1">
           <mxGeometry x="10" y="300" width="410" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="B0LEgTKcxPNfPMWZTYU8-1" value="&lt;font style=&quot;font-size: 15px;&quot; color=&quot;#000000&quot;&gt;Algorithme fonctionnalité de filtre des recettes&amp;nbsp;&amp;nbsp;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=17;fontColor=#FFFFFF;align=center;fontStyle=1" parent="1" vertex="1">
+        <mxCell id="B0LEgTKcxPNfPMWZTYU8-1" value="&lt;font style=&quot;font-size: 15px;&quot; color=&quot;#000000&quot;&gt;Algorithme fonctionnalité pour filtrer les recettes&amp;nbsp;&amp;nbsp;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=17;fontColor=#FFFFFF;align=center;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="10" y="230" width="810" height="70" as="geometry" />
         </mxCell>
         <mxCell id="L0UQswcFRdHEYQAvfNKD-1" value="&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;font-weight: bold; background-color: rgb(102, 204, 0);&quot;&gt;Option 2&lt;/span&gt;&lt;b&gt;:&amp;nbsp; &amp;nbsp;Méthode des &lt;span style=&quot;background-color: rgb(255, 255, 102);&quot;&gt;Tableaux d&#39;objets&lt;/span&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=15;align=left;" vertex="1" parent="1">
