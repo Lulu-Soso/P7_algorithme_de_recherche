@@ -127,7 +127,7 @@
         transition: 0.25s;
         top: 70px;
         background-color: #3282f7;
-        width: 667px;
+        max-width: 667px;
         display: flex;
         flex-wrap: wrap;
         flex: 0 0 33.3333%;
@@ -152,7 +152,7 @@
         transition: 0.25s;
         top: 70px;
         background-color: #68d9a4;
-        width: 667px;
+        max-width: 667px;
         display: flex;
         flex-wrap: wrap;
         flex: 0 0 33.3333%;
@@ -177,7 +177,7 @@
         transition: 0.25s;
         top: 70px;
         background-color: #ed6454;
-        width: 667px;
+        max-width: 667px;
         display: flex;
         flex-wrap: wrap;
         flex: 0 0 33.3333%;
@@ -206,6 +206,12 @@
       height: 45px;
       border: none;
       outline: none;
+    }
+
+    .option-ingredients ul,
+    .option-appliances ul,
+    .option-utensils ul {
+      max-width: 667px;
     }
 
     .option-ingredients li,
