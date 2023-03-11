@@ -166,6 +166,8 @@ a {
   opacity: 1;
   color: white;
   z-index: 10;
+  min-width: 542px;
+  max-width: 667px;
 }
 .dropdown-bar .dropdown.active::before {
   right: 20px;
