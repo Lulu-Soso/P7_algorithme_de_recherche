@@ -107,6 +107,7 @@ function initFilter() {
     });
 }
 
+/************************************ Option-2 Object-Array-Method ************************************/
 async function filterRecipes(filters) {
     const recipes = await getRecipes();
 
@@ -123,6 +124,7 @@ async function filterRecipes(filters) {
         return searchMatch && ingredientMatch && applianceMatch && utensilMatch;
     });
 }
+/************************************ End Option-2 Object-Array-Method ************************************/
 
 async function displayFilteredRecipes(filters) {
     let filteredRecipes = await filterRecipes(filters);
