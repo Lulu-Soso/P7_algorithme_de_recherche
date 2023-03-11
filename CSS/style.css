@@ -36,11 +36,11 @@ a {
   align-items: center;
   border-radius: 5px;
   height: 70px;
-  width: 60%;
+  width: 100%;
   margin: 20px auto;
 }
 .search-banner form input {
-  width: 90%;
+  width: 94%;
   height: 50px;
   border-radius: 5px;
   background-color: #e7e7e7;
@@ -149,7 +149,8 @@ a {
 .dropdown-bar .dropdown.active .dropdown-ingredients,
 .dropdown-bar .dropdown.active .dropdown-appliances,
 .dropdown-bar .dropdown.active .dropdown-utensils {
-  width: 667px;
+  max-width: 667px;
+  min-width: 542px;
   border-radius: 5px 5px 0 0;
 }
 .dropdown-bar .dropdown.active .dropdown-ingredients .option-ingredients,
@@ -192,7 +193,7 @@ a {
   transition: 0.25s;
   top: 70px;
   background-color: #3282f7;
-  width: 667px;
+  max-width: 667px;
   display: flex;
   flex-wrap: wrap;
   flex: 0 0 33.3333%;
@@ -215,7 +216,7 @@ a {
   transition: 0.25s;
   top: 70px;
   background-color: #68d9a4;
-  width: 667px;
+  max-width: 667px;
   display: flex;
   flex-wrap: wrap;
   flex: 0 0 33.3333%;
@@ -238,7 +239,7 @@ a {
   transition: 0.25s;
   top: 70px;
   background-color: #ed6454;
-  width: 667px;
+  max-width: 667px;
   display: flex;
   flex-wrap: wrap;
   flex: 0 0 33.3333%;
@@ -264,6 +265,11 @@ a {
   height: 45px;
   border: none;
   outline: none;
+}
+.dropdown-bar .dropdown .option-ingredients ul,
+.dropdown-bar .dropdown .option-appliances ul,
+.dropdown-bar .dropdown .option-utensils ul {
+  max-width: 667px;
 }
 .dropdown-bar .dropdown .option-ingredients li,
 .dropdown-bar .dropdown .option-appliances li,
