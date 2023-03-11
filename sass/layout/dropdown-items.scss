@@ -84,7 +84,8 @@
       .dropdown-ingredients,
       .dropdown-appliances,
       .dropdown-utensils {
-        width: 667px;
+        max-width: 667px;
+        min-width: 542px;
         border-radius: 5px 5px 0 0;
 
         .option-ingredients,
